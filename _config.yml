@@ -61,10 +61,13 @@ sidebar-avatar: https://www.gravatar.com/avatar/da814540082e6314023402665be12698
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 2              # A tag will be featured if the size of it is more than this condition value
 
 # friends
 friends:  # 友链
+  # - bryanyuan2:
+  #   title: bryanyuan2
+  #   href: http://bryanyuan2.github.io/
 
 # Directory
 source_dir: source
@@ -95,6 +98,13 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  AWS: AWS
+  前端: Frontend
+  Linux: Linux
+  PHP: PHP
+  後端: Server
+  軟體開發流程: Workflow
+  其他: Others
 tag_map:
 
 # Date / Time format

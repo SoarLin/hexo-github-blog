@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Hello World
+categories:
+  - Others
+tags:
+
 ---
 <!-- MarkdownTOC -->
 
