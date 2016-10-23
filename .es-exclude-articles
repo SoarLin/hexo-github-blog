@@ -1,6 +1,3 @@
-/404.html
-/atom.xml
-/robots.txt
-/search.json
-/sitemap.xml
-/**/hello-world/**/*.*
+//404.html
+/categories/index.html
+/tags/index.html

@@ -19,7 +19,8 @@
                     "term_vector": "with_positions_offsets",
                     "include_in_all": true,
                     "analyzer": "ik_max_word",
-                    "search_analyzer": "ik_smart"
+                    "search_analyzer": "ik_smart",
+                    "boost": 2
                 },
                 "slug": {
                     "type": "string",
