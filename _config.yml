@@ -192,7 +192,7 @@ post-default-img-mobile: https://soarlin.github.io/images/background-0.jpg
 
 # search api , set your custom key
 # swiftype_key: 5XWF1oK_73_-pntwcHBK
-search:
-  path: search.json
-  # source: all # other values: posts, pages
-  # trim_html: false
+#search:
+#  path: search.json
+#  source: all # other values: posts, pages
+#  trim_html: false

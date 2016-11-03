@@ -156,6 +156,7 @@ def main():
         return -1
 
     category_map = load_category_map(args.config)
+    # print json.dumps(category_map);
 
     last_index_time = 0
     if os.path.exists(args.lastIndexTimeFile) and os.path.isfile(args.lastIndexTimeFile):
@@ -185,6 +186,7 @@ def main():
         articles_map = load_valid_articles(cache, last_index_time)
         actions = to_actions(articles_map.values(), category_map,
                              excludePaths, args.index, args.doctype)
+        print json.dumps(actions)
         try:
             es_helpers.bulk(es_client, actions, refresh = True)
         except es_helpers.BulkIndexError as e:
