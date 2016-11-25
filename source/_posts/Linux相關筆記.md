@@ -15,6 +15,7 @@ photos:
 
 - [Linux 相關資料](#linux-相關資料)
     - [使用者磁碟限額](#使用者磁碟限額)
+    - [開機自動執行 script](#開機自動執行-script)
     - [開機自動掛載遠端共享資料夾](#開機自動掛載遠端共享資料夾)
         - [手動掛載指令步驟 :](#手動掛載指令步驟-)
         - [改為開機後自動掛載步驟：](#改為開機後自動掛載步驟：)
@@ -69,6 +70,33 @@ Filesystem  blocks  soft  hard inodes soft hard
     - 第５欄 (inodes)：使用者已使用的檔案數目。
     - 第６欄 (soft)：非強制性的 inode 限制。
     - 第７欄 (hard)：強制性的 inode 限制。
+
+<a name="開機自動執行-script"></a>
+## 開機自動執行 script
+
+在 Debian 及 Ubuntu 開機後, 如果想自動執行一些 shell script 或指令, 可以直接編輯 /etc/rc.local 檔案。
+
+以下是 /etc/rc.local 預設內容:
+````
+#!/bin/sh -e
+#
+# rc.local - executed at the end of each multiuser runlevel
+#
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+````
+
+要加入自動執行指令或 shell script 十分簡單, 只要直接加上要執行的指令即可，例如我要讓 solr-5.3.1 每次重開機後也被啟動，就加入`/path/to/solr-5.3.1/bin/solr start`
+
+````
+#!/bin/sh -e
+#
+# rc.local - executed at the end of each multiuser runlevel
+#
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+/home/ubuntu/solr-5.3.1/bin/solr start
+````
 
 <a name="開機自動掛載遠端共享資料夾"></a>
 ## 開機自動掛載遠端共享資料夾
