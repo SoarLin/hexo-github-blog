@@ -56,7 +56,8 @@ ga_domain: soarlin.github.io
 
 # Sidebar settings
 sidebar-about-description: "記錄自己工作中所接觸技術，包含前端、後端"
-sidebar-avatar: https://www.gravatar.com/avatar/da814540082e6314023402665be12698?s=200
+#sidebar-avatar: https://www.gravatar.com/avatar/da814540082e6314023402665be12698?s=200
+sidebar-avatar: /images/soarlin-avatar.jpg
 
 
 # Featured Tags
@@ -127,6 +128,7 @@ Plugins:
   - hexo-generator-archive
   - hexo-generator-category
   - hexo-generator-robotstxt
+  - hexo-generator-amp
 
 links: RSS
 
@@ -152,6 +154,29 @@ robotstxt:
     - /categories/
     - /tags/
   sitemap: https://soarlin.github.io/sitemap.xml
+
+# The following settings is the quick start options.
+generator_amp:
+  templateDir:  amp-template
+  assetDistDir: amp-dist
+  google_analytics: UA-1722543-6
+  logo:
+    path:   sample/logo.png
+    width:  600
+    height: 60
+  substituteTitleImage:
+    path:   sample/substituteTitleImage_black.png
+    width:  1024
+    height: 800
+  warningLog: false   # If you want to validate, please set true.
+  authorDetail:
+    authorReading: Soar Lin                     #(optional)
+    avatar:                                     #(optional)
+      path:   sample/avatar.png                 #(optional)
+      width:  150                               #(optional)
+      height: 150                               #(optional)
+    description: Startup, Full Stack Development         #(optional)
+  copyright_notice: © 2016 SoarLin              #(optional)
 
 # Archive
 archive_generator:
