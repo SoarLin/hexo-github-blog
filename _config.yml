@@ -144,15 +144,13 @@ sitemap:
 robotstxt:
   useragent: "*"
   disallow:
-    - /css/
-    - /js/
-    - /fonts/
+    - /search.json
   allow:
     - /
     - /2016/
     - /archievs/
     - /categories/
-    - /Feature-Tags/
+    - /tags/
   sitemap: https://soarlin.github.io/sitemap.xml
 
 # Archive
