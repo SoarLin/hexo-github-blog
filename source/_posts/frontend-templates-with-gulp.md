@@ -9,6 +9,8 @@ tags:
   - gulp
   - sass
   - ejs
+  - bower
+  - eslint
 categories:
   - Frontend
 ---
@@ -61,7 +63,7 @@ categories:
 
 基本配備當然就是 node.js 與 npm 了，其他東西也都是透過 npm 在慢慢安裝上去的，如果連 node.js 都還沒安裝，請上[官網](https://nodejs.org/en/)下載適合自己電腦設備的檔案來安裝
 
-1.  `npm install -g bower gulp` 安裝 bower 與 gulp 到全域環境下
+1. `npm install -g bower gulp` 安裝 bower 與 gulp 到全域環境下
 2. `npm install` 安裝此專案所需要套件
 3. `bower install` 安裝此專案所需要前端第三方套件
 
@@ -130,7 +132,7 @@ categories:
 #### 單一檔案說明
 
 * .bowerrc : bower 設定檔, 指定下載的套件存放目錄
-* .eslintrc.json : esline 設定檔, 用來檢查 js 語法
+* .eslintrc.json : eslint 設定檔, 用來檢查 js 語法
 * .gitignore : git 要忽略的檔案設定
 * bower.json : bower 安裝套件與版本
 * bundle-vendor.config.js : 指定第三方套件 js 檔編譯成單一檔案，用來減少 request 數量
