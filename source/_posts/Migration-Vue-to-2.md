@@ -14,9 +14,28 @@ tags:
 categories:
  - Frontend
 ---
+<!-- MarkdownTOC -->
 
+- [Migration Vue 1.x to 2.0](#migration-vue-1x-to-20)
+  - [前言](#前言)
+  - [升級前後版本比較](#升級前後版本比較)
+  - [升級 Step 1](#升級-step-1)
+    - [Vue 1.0 內可無痛修改](#vue-10-內可無痛修改)
+  - [升級 Step 2](#升級-step-2)
+    - [安裝主要工具](#安裝主要工具)
+    - [安裝編譯工具](#安裝編譯工具)
+    - [gulpfile 調整](#gulpfile-調整)
+    - [語法調整](#語法調整)
+  - [大功告成？](#大功告成？)
+  - [Reference](#reference)
+
+<!-- /MarkdownTOC -->
+
+
+<a name="migration-vue-1x-to-20"></a>
 # Migration Vue 1.x to 2.0
 
+<a name="前言"></a>
 ## 前言
 雖然知道 Vue 2.0 推出也好一陣子了，但是原本的專案一直在猶豫該不該升級到 2.0 版本，之前嘗試了一兩次要升級，最後都因為無法順利編譯過而放棄。但由於考量到之後還要再開發的功能也需要使用前端框架，所以這幾天還是痛下決心再試一次。
 
@@ -24,6 +43,7 @@ categories:
 
 而這次 Vue 的版本升級，也順便更新了 Laravel Elixir 的版本從 5 到 6，但似乎遇到了一個滿多人遇到的情況，在執行 gulp watch 時，會因為產生亂數版本號([version](https://laravel.com/docs/5.1/elixir#versioning-and-cache-busting)) 的動作出問題而程序終止，也因為這個問題讓我一度猶豫是否該把 elixir 版本降回去 5.0.x 版，但是昨晚也為了這付出了許多代價，結果還是失敗，只能放棄 gulp watch 這個美好的指令....XD
 
+<a name="升級前後版本比較"></a>
 ## 升級前後版本比較
 
 這裡先將有相關工具升級前後，版本的資料紀錄一下，
@@ -44,12 +64,14 @@ categories:
 
 很希望有人來指導這次的升級該怎麼做才是最佳做法，我不是很聰明，只能一直 try & error，經過了好幾個小時的時間消耗，才順利把 Vue 2.0 給編譯出來，而且可以正常執行，覺得這真的是個打擊信心的做法
 
+<a name="升級-step-1"></a>
 ## 升級 Step 1
 
 當然先去找升級提示工具來提示，然後在 Vue 1.0 還能編譯的範圍，先將一些細節修改，使用的是官方推薦的工具 - [Vue migration helper](https://github.com/vuejs/vue-migration-helper)，第一次檢查專案時，跑出了37個建議，因為之前有過一些經驗，知道有些問題可以先處理，這裡列出來給後人參考
 
 ![Vue Migration Helper](https://soarlin.github.io/images/vue2/vue-migration-helper.png)
 
+<a name="vue-10-內可無痛修改"></a>
 ### Vue 1.0 內可無痛修改
 
 在真的 npm install vue@2.0 之前，還是有些建議寫法可以先改起來放，可能會有人問說，就乾脆安裝 Vue 2.0 然後再一口氣改不就好了，我也很想這麼做，但是 gulp 一開始就跑不過，不可控制的變數太多，我失敗了幾次後學到的教訓，還是慢慢來就好，如果本身已經是大神的，可能就沒差，直接上吧！
@@ -121,11 +143,13 @@ index : {{ index }}, item = {{ item }}
 </div>
 ````
 
+<a name="升級-step-2"></a>
 ## 升級 Step 2
 當然就是安裝 Vue 2.0，然後再根據 vue-migration-helper 剩下的建議，把語法改一改，再來找合適的編譯工具
 
 因為還有使用 vuex 來做狀態的管理，為了配合 Vue 2.0，vuex 也需要從原本的 0.6 升級啦 ([Migration form Vuex 0.6.x to 1.0](https://vuejs.org/v2/guide/migration-vuex.html))，雖然 vuex 也有 2.0版本，但是寫法也改了，我暫時不想再搞自己了，先把 vue 升到 2.0 就快搞死我了，不想多折磨自己
 
+<a name="安裝主要工具"></a>
 ### 安裝主要工具
 
 當然是 vue 2.0 與 vuex
@@ -134,6 +158,7 @@ index : {{ index }}, item = {{ item }}
 npm install --save vue@2.0.1 vuex@1.0.1
 ````
 
+<a name="安裝編譯工具"></a>
 ### 安裝編譯工具
 
 經過了很長時間的 try & error，總結出應該就是下面這幾個工具，不然就在參考上面的表格吧
@@ -149,6 +174,7 @@ npm install --save-dev laravel-elixir-rollup-official laravel-elixir-webpack-off
 npm install --save laravel-elixir@6.0.0-14 laravel-elixir-vue-2
 ````
 
+<a name="gulpfile-調整"></a>
 ### gulpfile 調整
 
 為了編譯 Vue 2.0，使用了 laravel-elixir-vue-2，所以基本用法如下：
@@ -180,6 +206,7 @@ elixir(function(mix) {
 });
 ````
 
+<a name="語法調整"></a>
 ### 語法調整
 一樣繼續使用 vue-migration-helper 檢查語法，加以調整
 
@@ -334,11 +361,13 @@ export default {
 
 中間一度誤入歧途，找到了一些在討論 [prop 取消雙向綁定](https://vuejs.org/v2/guide/migration.html#twoWay-Prop-Option-removed) 的問題，但等到後來解決後才想到，我根本就是用 vuex 在做狀態管理，一開始就不是 twoWay bind 的做法，還搞了半天，簡直就是白痴
 
+<a name="大功告成？"></a>
 ## 大功告成？
 
 其實還沒有經過很嚴謹的測試，但是基本的功能與操作上，似乎沒有太多問題，我該高興我好不容易花了兩三天總算順利升級了嗎？但是想到 elixir 6 在 gulp watch 會出錯 ([Cannot gulp watch, but can gulp](https://github.com/laravel/elixir/issues/637))，實在一點也高興不起來，上網找了一下相關問題，似乎滿多人也都遇到了，但真正的解法我倒是還沒找到，希望有人可以來替我指點迷津。
 
 
+<a name="reference"></a>
 ## Reference
 
 [VueJS 2.0 升級小幫手: Vue migration helper](http://kuro.tw/posts/2016/09/30/Vue-2-0-%E5%8D%87%E7%B4%9A%E5%B0%8F%E5%B9%AB%E6%89%8B-Vue-migration-helper/)
