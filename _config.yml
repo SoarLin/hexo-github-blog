@@ -129,6 +129,7 @@ Plugins:
   - hexo-generator-category
   - hexo-generator-robotstxt
   - hexo-generator-amp
+  - hexo-renderer-marked
 
 links: RSS
 
@@ -177,6 +178,16 @@ generator_amp:
       height: 150                               #(optional)
     description: Startup, Full Stack Development         #(optional)
   copyright_notice: © 2016 SoarLin              #(optional)
+
+# hexo-renderer-marked
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
 
 # Archive
 archive_generator:
