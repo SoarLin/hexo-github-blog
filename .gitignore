@@ -6,3 +6,4 @@ node_modules/
 public/
 .deploy*/
 hexo-elasticsearch-tools/
+hexo-elasticsearch-tools_modify

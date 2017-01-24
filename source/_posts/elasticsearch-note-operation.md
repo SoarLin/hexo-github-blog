@@ -19,6 +19,7 @@ categories:
   - [基本指令](#基本指令)
     - [檢查 Server 狀態](#檢查-server-狀態)
     - [列出所有 index](#列出所有-index)
+    - [列出index下所有types](#列出index下所有types)
     - [建立 index](#建立-index)
     - [刪除 index](#刪除-index)
     - [建立資料index\(基本單筆資料操作\)](#建立資料index基本單筆資料操作)
@@ -76,6 +77,31 @@ health status index   pri rep docs.count docs.deleted store.size pri.store.size
 green  open   quizfun   1   0       5417          301     11.9mb         11.9mb
 green  open   soarlin   1   0         16            3    502.1kb        502.1kb
 yellow open   blogs     5   1         17            2      255kb          255kb
+````
+
+<a name="列出index下所有types"></a>
+### 列出index下所有types
+
+````
+curl -XGET 'http://localhost:9200/myindex/_mapping?pretty'
+
+回傳結果類似下方
+{
+  "myindex": {
+    "mappings:: {
+      "type1": {
+        "properties" : {
+          ...
+        }
+      }
+      "type2": {
+        "properties" : {
+          ...
+        }
+      }
+    }
+  }
+}
 ````
 
 <a name="建立-index"></a>
