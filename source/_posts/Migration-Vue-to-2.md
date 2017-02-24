@@ -90,7 +90,7 @@ Vue 2.0 寫法
 ````
 
 #### HTML 計算插值改用 v-html 替換
-[HTML interpolation with \{ \{ \{ \} \} \} has been removed](http://vuejs.org/guide/migration.html#HTML-Interpolation)
+[HTML interpolation with &#123;&#123;&#123;&#125;&#125;&#125; has been removed](http://vuejs.org/guide/migration.html#HTML-Interpolation)
 
 ````
 Vue 1.x 寫法
@@ -244,7 +244,7 @@ mounted: function () {
 ````
 
 #### Transition 參數替換
-[The new and improved transition system requires use of new <transition> and <transition-group> components](http://vuejs.org/guide/migration.html#transition-Attribute)
+[The new and improved transition system requires use of new &lt;transition&gt; and &lt;transition-group&gt; components](http://vuejs.org/guide/migration.html#transition-Attribute)
 
 原本的專案內用到 modal 效果，就會需要個簡單的過場，這裡 Vue 有提供好的範例可以參考使用，還不賴 ( [Vue 2.0 的 Modal Compontent 範例](https://vuejs.org/v2/examples/modal.html) )
 
