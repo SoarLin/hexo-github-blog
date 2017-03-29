@@ -209,6 +209,7 @@ deploy:
   type: git
   repo: git@SoarLin.github.com:SoarLin/soarlin.github.io.git
   branch: master
+  message: "Deploy By Hexo at {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 
 # img CDN path
