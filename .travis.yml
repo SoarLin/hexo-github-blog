@@ -27,8 +27,11 @@ before_install:
 
   - npm install -g hexo-cli
 
-#before_script:
-#  - git clone https://github.com/SoarLin/soarlin.github.io.git public
+install:
+  - npm install
+
+before_script:
+  - git clone https://github.com/SoarLin/soarlin.github.io.git public
 
 script:
   - hexo generate
