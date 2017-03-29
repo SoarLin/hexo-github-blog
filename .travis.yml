@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "0.10"
+  - "4"
 
 before_install:
   # Decrypt the private key
@@ -15,12 +15,12 @@ before_install:
   # Copy SSH config
   #- cp .travis/ssh_config ~/.ssh/config
   # Set Git config
-  #- git config --global user.name "Soar Lin"
-  #- git config --global user.email soar.lin@gmail.com
+  - git config --global user.name "Soar Lin"
+  - git config --global user.email soar.lin@gmail.com
   # Install Hexo
-  #- npm install -g hexo-cli
+  - npm install -g hexo-cli
   # Clone the repository
   #- git clone https://github.com/hexojs/hexojs.github.io .deploy
 script:
-  #- hexo generate
-  #- hexo deploy
+  - hexo generate
+  - hexo deploy
