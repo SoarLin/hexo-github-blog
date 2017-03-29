@@ -7,19 +7,19 @@ cache:
     - node_modules
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in id_rsa_github_soarlin.enc -out id_rsa_github_soarlin -d
+  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in id_rsa_github_soarlin.enc -out id_rsa_github -d
 
-  - chmod 600 id_rsa_github_soarlin
+  - chmod 600 id_rsa_github
 
   - eval $(ssh-agent)
-  - ssh-add id_rsa_github_soarlin
+  - ssh-add id_rsa_github
 
   #- cp .travis/ssh_config ~/.ssh/config
-  - echo 'Host SoarLin.github.com
-      HostName github.com
-      User git
-      StrictHostKeyChecking no
-      IdentityFile id_rsa_github_soarlin
+  - echo 'Host SoarLin.github.com \
+      HostName github.com \
+      User git \
+      StrictHostKeyChecking no \
+      IdentityFile id_rsa_github \
       IdentitiesOnly yes' > ~/.ssh/config
 
   - git config --global user.name "Soar Lin"
