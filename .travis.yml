@@ -1,21 +1,20 @@
 language: node_js
 node_js:
-  - '4'
+- '4'
 before_install:
-  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv
-    -in ~\/.travis/id_rsa_github_soarlin.enc -out ~\/.ssh/id_rsa_github_soarlin -d
-  - chmod 600 ~\/.ssh/id_rsa_github_soarlin
+- openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv
+  -in id_rsa_github_soarlin.enc -out ~\/.ssh/id_rsa_github_soarlin -d
 
-  - eval $(ssh-agent)
-  - ssh-add ~\/.ssh/id_rsa_github_soarlin
+- chmod 600 ~\/.ssh/id_rsa_github_soarlin
 
-  - cp ~\/.travis/ssh_config ~/.ssh/config
+- eval $(ssh-agent)
+- ssh-add ~\/.ssh/id_rsa_github_soarlin
 
-  - git config --global user.name "Soar Lin"
-  - git config --global user.email soar.lin@gmail.com
+- cp ~\/.travis/ssh_config ~/.ssh/config
 
-  - npm install -g hexo-cli
-
+- git config --global user.name "Soar Lin"
+- git config --global user.email soar.lin@gmail.com
+- npm install -g hexo-cli
 script:
-  - hexo generate
-  - hexo deploy
+- hexo generate
+- hexo deploy
