@@ -27,9 +27,13 @@ before_install:
   - npm install -g hexo-cli
 
 before_script:
-  - git clone --branch master https://github.com/SoarLin/soarlin.github.io.git public
+  - git clone https://github.com/SoarLin/soarlin.github.io.git .deploy_git
 
 script:
   - hexo generate
   - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog&type=articles'
   - hexo deploy
+
+branches:
+  only:
+    - master
