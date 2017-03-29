@@ -3,7 +3,7 @@ layout: post
 title: use-travis-ci-auto-deploy-to-github
 author: Soar Lin
 cdn: header-off
-header-img: ''
+header-img: 'https://soarlin.github.io/images/tarvis-ci/Travis-CI-bg.png'
 date: 2017-03-29 23:27:57
 tags:
   - TravisCI

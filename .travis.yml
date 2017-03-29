@@ -1,26 +1,35 @@
 language: node_js
+
 node_js:
-- '4'
+  - '4'
+cache:
+  directories:
+    - node_modules
+
 before_install:
-- openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in id_rsa_github_soarlin.enc -out id_rsa_github_soarlin -d
+  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in id_rsa_github_soarlin.enc -out id_rsa_github_soarlin -d
 
-- chmod 600 id_rsa_github_soarlin
+  - chmod 600 id_rsa_github_soarlin
 
-- eval $(ssh-agent)
-- ssh-add id_rsa_github_soarlin
+  - eval $(ssh-agent)
+  - ssh-add id_rsa_github_soarlin
 
-#- cp .travis/ssh_config ~/.ssh/config
-- echo 'Host github.com
-  User git
-  StrictHostKeyChecking no
-  IdentityFile id_rsa_github_soarlin
-  IdentitiesOnly yes' > ~/.ssh/config
+  #- cp .travis/ssh_config ~/.ssh/config
+  - echo 'Host github.com
+    User git
+    StrictHostKeyChecking no
+    IdentityFile id_rsa_github_soarlin
+    IdentitiesOnly yes' > ~/.ssh/config
 
-- git config --global user.name "Soar Lin"
-- git config --global user.email soar.lin@gmail.com
+  - git config --global user.name "Soar Lin"
+  - git config --global user.email soar.lin@gmail.com
 
-- npm install -g hexo-cli
+  - npm install -g hexo-cli
+
+before_script:
+  - git clone --branch master https://github.com/SoarLin/soarlin.github.io.git public
+
 script:
-- hexo generate
-- curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog&type=articles'
-- hexo deploy
+  - hexo generate
+  - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog&type=articles'
+  - hexo deploy
