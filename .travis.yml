@@ -3,13 +3,13 @@ node_js:
   - '4'
 before_install:
   - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv
-    -in .travis/id_rsa_github_soarlin.enc -out ~\/.ssh/id_rsa_github_soarlin -d
+    -in ~\/.travis/id_rsa_github_soarlin.enc -out ~\/.ssh/id_rsa_github_soarlin -d
   - chmod 600 ~\/.ssh/id_rsa_github_soarlin
 
   - eval $(ssh-agent)
   - ssh-add ~\/.ssh/id_rsa_github_soarlin
 
-  - cp .travis/ssh_config ~/.ssh/config
+  - cp ~\/.travis/ssh_config ~/.ssh/config
 
   - git config --global user.name "Soar Lin"
   - git config --global user.email soar.lin@gmail.com
