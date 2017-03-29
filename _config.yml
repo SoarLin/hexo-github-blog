@@ -207,7 +207,7 @@ theme: Anisina
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:SoarLin/soarlin.github.io.git
+  repo: git@SoarLin.github.com:SoarLin/soarlin.github.io.git
   branch: master
 
 
