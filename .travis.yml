@@ -14,13 +14,13 @@ before_install:
   - eval $(ssh-agent)
   - ssh-add id_rsa_github
 
-  #- cp .travis/ssh_config ~/.ssh/config
-  - echo 'Host SoarLin.github.com \
-      HostName github.com \
-      User git \
-      StrictHostKeyChecking no \
-      IdentityFile id_rsa_github \
-      IdentitiesOnly yes' > ~/.ssh/config
+  - cp ssh_config ~/.ssh/config
+  #- echo 'Host SoarLin.github.com
+  #    HostName github.com
+  #    User git
+  #    StrictHostKeyChecking no
+  #    IdentityFile id_rsa_github
+  #    IdentitiesOnly yes' > ~/.ssh/config
 
   - git config --global user.name "Soar Lin"
   - git config --global user.email soar.lin@gmail.com

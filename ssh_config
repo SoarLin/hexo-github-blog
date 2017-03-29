@@ -1,0 +1,6 @@
+Host SoarLin.github.com
+	HostName github.com
+	User git
+	StrictHostKeyChecking no
+	IdentityFile id_rsa_github
+	IdentitiesOnly yes
