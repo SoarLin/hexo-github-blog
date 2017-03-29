@@ -11,8 +11,8 @@ before_install:
 
 #- cp ~\/.travis/ssh_config ~/.ssh/config
 
-#- git config --global user.name "Soar Lin"
-#- git config --global user.email soar.lin@gmail.com
+- git config --global user.name "Soar Lin"
+- git config --global user.email soar.lin@gmail.com
 - npm install -g hexo-cli
 script:
 - hexo generate
