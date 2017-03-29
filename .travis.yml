@@ -15,19 +15,20 @@ before_install:
   - ssh-add id_rsa_github_soarlin
 
   #- cp .travis/ssh_config ~/.ssh/config
-  - echo 'Host github.com
-    User git
-    StrictHostKeyChecking no
-    IdentityFile id_rsa_github_soarlin
-    IdentitiesOnly yes' > ~/.ssh/config
+  - echo 'Host SoarLin.github.com
+      HostName github.com
+      User git
+      StrictHostKeyChecking no
+      IdentityFile id_rsa_github_soarlin
+      IdentitiesOnly yes' > ~/.ssh/config
 
   - git config --global user.name "Soar Lin"
   - git config --global user.email soar.lin@gmail.com
 
   - npm install -g hexo-cli
 
-before_script:
-  - git clone https://github.com/SoarLin/soarlin.github.io.git .deploy_git
+#before_script:
+#  - git clone https://github.com/SoarLin/soarlin.github.io.git public
 
 script:
   - hexo generate

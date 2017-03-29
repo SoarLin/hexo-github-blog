@@ -1,6 +1,6 @@
 ---
 layout: post
-title: use-travis-ci-auto-deploy-to-github
+title: 使用 Travis CI 自動發布 Hexo 內容到 Github
 author: Soar Lin
 cdn: header-off
 header-img: 'https://soarlin.github.io/images/tarvis-ci/Travis-CI-bg.png'
