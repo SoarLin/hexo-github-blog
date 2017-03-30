@@ -76,66 +76,6 @@ $(document).ready(function() {
         });
         return resultHtml;
     }
-/*
-$.get("../search.json", function (result) {
-    addCountToJson(keyword, result);
-    result = quickSort(result);
-    var resultHtml = '';
-    var count = 0;
-    for (var i = result.length - 1; i >= 0; --i) {
-        count++;
-        resultHtml += '<li><span class="label label-info">'+result[i].score+'</span>' +
-            ' <a href="'+result[i].url+'">' + result[i].title + '</a></li>';
-        if (count > 7) break;
-    }
-    $("#result").append(resultHtml);
-});
-*/
-/*
-    function calcScore(key, tokenize) {
-        var score = 0;
-        for (var x = 0; x < tokenize.length; ++x) {
-            if (tokenize[x] == null) {
-                break;
-            }
-            for (var i = 0; i < key.length; ++i) {
-                for (var t = 0; t < tokenize[x].length; ++t) {
-                    if (tokenize[x][t] == key[i]) {
-                        score++;
-                    }
-                }
-
-            }
-        }
-        return score;
-    }
-
-    function addCountToJson(key, json) {
-        for (var i = 0; i < json.length; ++i) {
-            // 题目匹配权重100 , 内容匹配权重1 , 匹配算法: 单字匹配 (待优化)
-            json[i]['score'] = calcScore(key, json[i].content_tokenize) + calcScore(key, json[i].title_tokenize) * 100;
-        }
-    }
-
-    // 按 json 元素 score 值进行排序
-    function quickSort(json) {
-        if (json.length <= 1) {
-            return json;
-        }
-        var pivotIndex = Math.floor(json.length / 2);
-        var pivot = json.splice(pivotIndex, 1)[0]; // 基准
-        var left = [];
-        var right = [];
-        for (var i = 0; i < json.length; i++) {
-            if (json[i].score < pivot.score) {
-                left.push(json[i]);
-            } else {
-                right.push(json[i]);
-            }
-        }
-        return quickSort(left).concat(pivot, quickSort(right));
-    }
-*/
 });
 
 // responsive embed videos
