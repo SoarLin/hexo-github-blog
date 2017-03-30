@@ -69,7 +69,7 @@ travis encrypt-file ~/.ssh/id_rsa_github --add
 travis encrypt-file ~/.ssh/id_rsa_github --add YOUR-NAME/YOUR-REPO-NAME
 ````
 
-這時候 .travis.yml 裡面會被添加一些加解密的指令，就不要亂改嘍！注意最後的 `-in xxxxx.env -out oooooo -d`，當中`xxxxx`是剛剛加密後產生的 .enc 檔，而`ooooo`是 Travis 解密後的檔案路徑，之後會一直用到
+這時候 .travis.yml 裡面會被添加一些加解密的指令，就不要亂改嘍！注意最後的 `-in xxxxx.enc -out oooooo -d`，當中`xxxxx`是剛剛加密後產生的 .enc 檔，而`ooooo`是 Travis 解密後的檔案路徑，之後會一直用到
 
 ````
 language: node_js
