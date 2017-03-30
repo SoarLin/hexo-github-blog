@@ -26,16 +26,13 @@ install:
   - npm install
 
 before_script:
-  - mv Anisina themes/
-#  - git clone https://github.com/SoarLin/soarlin.github.io.git public
+#  - mv Anisina themes/
 
 script:
   - hexo generate
-  - ls -la themes/Anisina
-
-#  - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
+  - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
   - hexo deploy
 
-#branches:
-#  only:
-#    - master
+branches:
+ only:
+  - master
