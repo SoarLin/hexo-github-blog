@@ -34,7 +34,7 @@ script:
   - ls -la themes/Anisina
 
 #  - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
- - hexo deploy
+  - hexo deploy
 
 #branches:
 #  only:
