@@ -8,21 +8,14 @@ cache:
     - node_modules
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in id_rsa_github_soarlin.enc -out id_rsa_github -d
+  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in .travis/id_rsa_github.enc -out ~/.ssh/id_rsa -d
 
-  - chmod 600 id_rsa_github
+  - chmod 600 ~/.ssh/id_rsa
 
   - eval $(ssh-agent)
-  - ssh-add id_rsa_github
+  - ssh-add ~/.ssh/id_rsa
 
-  - mv id_rsa_github ~/.ssh/
-  - cp ssh_config ~/.ssh/config
-  #- echo 'Host SoarLin.github.com
-  #    HostName github.com
-  #    User git
-  #    StrictHostKeyChecking no
-  #    IdentityFile id_rsa_github
-  #    IdentitiesOnly yes' > ~/.ssh/config
+  - cp .travis/ssh_config ~/.ssh/config
 
   - git config --global user.name "Soar Lin"
   - git config --global user.email soar.lin@gmail.com
@@ -37,13 +30,15 @@ before_script:
 
 script:
   - hexo generate
+  - ls -ls ~/.ssh/
   - cat ~/.ssh/config
   - cat ~/.ssh/id_rsa_github
   - ls -la
+  - cat ~/.deploy_git/.git/config
 
 #  - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
 #  - hexo deploy
 
-branches:
-  only:
-    - master
+#branches:
+#  only:
+#    - master
