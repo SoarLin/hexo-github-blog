@@ -6,7 +6,7 @@
 
 // Tooltip Init
 $(function() {
-    $("[data-toggle='tooltip']").tooltip();
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 
@@ -22,9 +22,12 @@ $(function() {
 
 // responsive tables
 $(document).ready(function() {
-    $("table").wrap("<div class='table-responsive'></div>");
-    $("table").addClass("table");
+    $('table').wrap('<div class=\"table-responsive\"></div>');
+    $('table').addClass('table');
+});
 
+// Search
+$(document).ready(function() {
     // if (window.location.href.includes('soarlin.github')) {
     //     $('#sidebar_search').hide();
     // }
