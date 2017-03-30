@@ -222,5 +222,8 @@ branches:
 <a name="reference"></a>
 # Reference
 
-[用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)
+[用Travis CI自动部署Hexo博客](https://www.karlzhou.com/2016/05/28/travis-ci-deploy-blog/) <-- 推薦這篇，很詳細
+[用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/) <-- Hexo作者大大的文章
+[用 Travis CI 自動部屬 hexo 到 GitHub](Source: https://ssarcandy.tw/2016/07/29/hexo-auto-deploy/)
+[使用 Travis CI 自动更新 Hexo Blog](http://xwartz.xyz/pupa/2016/06/auto-update-with-travis-ci/)
 
