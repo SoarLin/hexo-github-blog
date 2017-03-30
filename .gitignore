@@ -3,7 +3,11 @@ Thumbs.db
 db.json
 *.log
 node_modules/
+
 public/
+
 .deploy*/
+
+amp-template/
 hexo-elasticsearch-tools/
 hexo-elasticsearch-tools_modify
