@@ -1,28 +1,25 @@
 ---
 layout: post
 title: CSS筆記
+author: Soar Lin
+cdn: header-off
+header-img: ''
 date: 2016-08-27 16:51:17
-updated: 2016-08-27 22:56:13
 tags:
  - background
  - animation
  - transform
  - transition
-
 categories:
  - Frontend
-
-photos:
- - http://7xls5g.com1.z0.glb.clouddn.com/talk-about-css-preprocessor.png
-
 ---
 <!-- MarkdownTOC -->
 
 - [CSS](#css)
-  - [Background 背景](#background-背景)
-  - [Animation 動畫效果](#animation-動畫效果)
-  - [Transform 變化](#transform-變化)
-  - [Transition 轉場](#transition-轉場)
+  - [Background 背景](#background-%E8%83%8C%E6%99%AF)
+  - [Animation 動畫效果](#animation-%E5%8B%95%E7%95%AB%E6%95%88%E6%9E%9C)
+  - [Transform 變化](#transform-%E8%AE%8A%E5%8C%96)
+  - [Transition 轉場](#transition-%E8%BD%89%E5%A0%B4)
 
 <!-- /MarkdownTOC -->
 
@@ -30,7 +27,7 @@ photos:
 <a name="css"></a>
 # CSS
 
-<a name="background-背景"></a>
+<a name="background-%E8%83%8C%E6%99%AF"></a>
 ## Background 背景
 
 **background: color image position/size repeat origin clip attachment initial|inherit;**
@@ -44,7 +41,7 @@ photos:
 * clip: border-box|padding-box|content-box (沒用過)
 * attachment: scroll|fixed|local (沒用過)
 
-<a name="animation-動畫效果"></a>
+<a name="animation-%E5%8B%95%E7%95%AB%E6%95%88%E6%9E%9C"></a>
 ## Animation 動畫效果
 
 **animation: @keyframes | duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name**
@@ -69,7 +66,7 @@ photos:
 * play-state: 控制動畫的播放狀態。有 pause 和 running 兩種值，後者為預設值。
 * name: keyframes 的名稱
 
-<a name="transform-變化"></a>
+<a name="transform-%E8%AE%8A%E5%8C%96"></a>
 ## Transform 變化
 
 **transform: transform-functions**
@@ -81,7 +78,7 @@ photos:
 * matrix(n,n,n,n,n,n), matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)
 * perspective()
 
-<a name="transition-轉場"></a>
+<a name="transition-%E8%BD%89%E5%A0%B4"></a>
 ## Transition 轉場
 
 **transition: name | duration | (timing function) | (delay) {, name | duration};**
