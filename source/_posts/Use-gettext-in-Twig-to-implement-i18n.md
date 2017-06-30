@@ -184,3 +184,63 @@ msgstr "恭喜你！獲得%score%分"
   {% endtrans %}
 <p>
 ````
+
+# 後記
+
+原本以為都改好可以正常運作了，程式碼 deploy 到 server 上才發現更可怕的事實，辛辛苦苦做好的多語系功能完全無法執行...WTF。好在有另外寫一個測試的檔案，可以很快看出是 setlocale 這個 function 無法順利執行，上網查了一些解決方法，提供以下兩個連結。
+
+[PHP setlocale has no effect](https://stackoverflow.com/questions/10909911/php-setlocale-has-no-effect)
+[setlocale() returns false](https://stackoverflow.com/questions/3694294/setlocale-returns-false)
+
+我看完這兩篇後，大概就是以下幾個步驟：
+
+* 先檢查 server 上可設定的語系
+
+````
+locale -a
+
+# 原本只能看到以下幾個
+C
+C.UTF-8
+en_US.utf8
+POSIX
+````
+
+而我需要有zh_TW, zh_CN, ja_JP，所以需要自行在安裝這幾個語系的檔案
+
+````
+sudo /usr/share/locales/install-language-pack zh_TW
+sudo /usr/share/locales/install-language-pack zh_CN
+sudo /usr/share/locales/install-language-pack ja_JP
+````
+
+其實都到這裡了，應該要可以跑吧！**但是**還是沒那麼簡單，因為 Mac OSX 的系統與 Ubuntu 系統內的名稱還是不太一樣
+
+MAC OSX下的`locale -a`可以看到，語系種類非常多種，跟剛剛在 server 上看到那兩三個相差甚遠
+````
+en_US
+en_US.ISO8859-1
+en_US.ISO8859-15
+en_US.US-ASCII
+en_US.UTF-8
+
+...
+
+ja_JP
+ja_JP.eucJP
+ja_JP.SJIS
+ja_JP.UTF-8
+
+...
+
+zh_CN
+zh_CN.GB2312
+zh_CN.GBK
+zh_CN.UTF-8
+
+zh_TW
+zh_TW.Big5
+zh_TW.UTF-8
+````
+
+而要注意的是，原本程式內寫的 `setlocale(LC_ALL, 'zh_TW');` 到了 server 上就要跟著調整成 `setlocale(LC_ALL, 'zh_TW.utf8');` 大概做完這些動作，我辛辛苦苦做好的多語系版本總算可以運作了，就甘心！
