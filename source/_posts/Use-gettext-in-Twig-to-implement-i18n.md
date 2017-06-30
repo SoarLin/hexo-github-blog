@@ -244,3 +244,5 @@ zh_TW.UTF-8
 ````
 
 而要注意的是，原本程式內寫的 `setlocale(LC_ALL, 'zh_TW');` 到了 server 上就要跟著調整成 `setlocale(LC_ALL, 'zh_TW.utf8');` 大概做完這些動作，我辛辛苦苦做好的多語系版本總算可以運作了，就甘心！
+
+P.S. 有時候 server 需要更新一下 locale，指令是 `sudo dpkg-reconfigure locales`
