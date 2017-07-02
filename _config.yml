@@ -32,6 +32,7 @@ github_username: soarlin
 facebook_username: soarlin
 linkedin_username: soarlin
 instagram_username: soarlin
+codepen_username: SoarLin
 
 # Build settings
 anchorjs: false                        # if you want to customize anchor. check out line:181 of `post.html`

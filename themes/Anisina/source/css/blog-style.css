@@ -25,12 +25,12 @@ hr{
 }
 
 .sidebar-container a {
-    color: #bfbfbf !important;
+    color: #bfbfbf;
 }
 
 .sidebar-container a:hover,
 .sidebar-container a:active {
-    color: #0085a1 !important;
+    color: #000;
 }
 
 .sidebar-container .tags a {
