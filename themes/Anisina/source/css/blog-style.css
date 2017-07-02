@@ -25,12 +25,12 @@ hr{
 }
 
 .sidebar-container a {
-    color: #bfbfbf;
+    color: #bfbfbf !important;
 }
 
 .sidebar-container a:hover,
 .sidebar-container a:active {
-    color: #000;
+    color: #183A37 !important;
 }
 
 .sidebar-container .tags a {
@@ -39,7 +39,7 @@ hr{
 
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-    border-color: #0085a1;
+    border-color: #183A37;
 }
 
 .sidebar-container .short-about img {
