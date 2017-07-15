@@ -15,15 +15,15 @@ categories:
 
 <!-- MarkdownTOC -->
 
-- [前期準備](#前期準備)
+- [前期準備](#%E5%89%8D%E6%9C%9F%E6%BA%96%E5%82%99)
 - [Add Private Key](#add-private-key)
-- [加入 SSH 連線設定](#加入-ssh-連線設定)
-  - [增加 ssh 連線的 config 設定](#增加-ssh-連線的-config-設定)
-  - [.travis.yml 內設定](#travisyml-內設定)
-- [增加 git 資訊](#增加-git-資訊)
-- [加入 Hexo 以及執行 Deploy](#加入-hexo-以及執行-deploy)
-  - [補充：](#補充：)
-- [後記](#後記)
+- [加入 SSH 連線設定](#%E5%8A%A0%E5%85%A5-ssh-%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A)
+  - [增加 ssh 連線的 config 設定](#%E5%A2%9E%E5%8A%A0-ssh-%E9%80%A3%E7%B7%9A%E7%9A%84-config-%E8%A8%AD%E5%AE%9A)
+  - [.travis.yml 內設定](#travisyml-%E5%85%A7%E8%A8%AD%E5%AE%9A)
+- [增加 git 資訊](#%E5%A2%9E%E5%8A%A0-git-%E8%B3%87%E8%A8%8A)
+- [加入 Hexo 以及執行 Deploy](#%E5%8A%A0%E5%85%A5-hexo-%E4%BB%A5%E5%8F%8A%E5%9F%B7%E8%A1%8C-deploy)
+  - [補充：](#%E8%A3%9C%E5%85%85%EF%BC%9A)
+- [後記](#%E5%BE%8C%E8%A8%98)
 - [Reference](#reference)
 
 <!-- /MarkdownTOC -->
@@ -31,7 +31,7 @@ categories:
 
 其實一直都想研究一下 CI/CD 的一些流程，知道 Travis CI 可以結合 Github 上的專案來進行，那就先從一些簡單的小專案開始好了，上網找到一篇[文章](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)有 Travis CI 與 Github 以及 Hexo 的關鍵字，害我好興奮，看了好一陣子後決定上了！
 
-<a name="前期準備"></a>
+<a name="%E5%89%8D%E6%9C%9F%E6%BA%96%E5%82%99"></a>
 # 前期準備
 
 * 申請 Travis CI 帳號
@@ -90,12 +90,12 @@ before_install:
 
 ````
 
-<a name="加入-ssh-連線設定"></a>
+<a name="%E5%8A%A0%E5%85%A5-ssh-%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A"></a>
 # 加入 SSH 連線設定
 
 這時只是把自己的 private key 加密後，在 Travis 從 github 抓出來解密成功，接著還需要指定 SSH 連回 github 使用剛剛解密的 private key，步驟大概是：
 
-<a name="增加-ssh-連線的-config-設定"></a>
+<a name="%E5%A2%9E%E5%8A%A0-ssh-%E9%80%A3%E7%B7%9A%E7%9A%84-config-%E8%A8%AD%E5%AE%9A"></a>
 ## 增加 ssh 連線的 config 設定
 * 自己的再連 github 的時候，因為有兩個 github 帳號，所以產生了兩組 private key使用，連帶需要把 ssh 連線設定分開寫
 * 這邊只列出自己目前常用帳號的 ssh 連線設定提供參考
@@ -117,7 +117,7 @@ Host SoarLin.github.com
 	IdentitiesOnly yes
 ````
 
-<a name="travisyml-內設定"></a>
+<a name="travisyml-%E5%85%A7%E8%A8%AD%E5%AE%9A"></a>
 ## .travis.yml 內設定
 
 1. 更改 private key 權限為 600
@@ -142,7 +142,7 @@ before_install:
 	- cp .travis/ssh_config ~/.ssh/config
 ````
 
-<a name="增加-git-資訊"></a>
+<a name="%E5%A2%9E%E5%8A%A0-git-%E8%B3%87%E8%A8%8A"></a>
 # 增加 git 資訊
 因為 hexo deploy 的時候，會將所有產生出來的檔案 push 回 github，所以需要有個 git psuh 的使用者資訊，所以繼續加入 .travis.yml
 
@@ -165,11 +165,11 @@ before_install:
 
 ````
 
-<a name="加入-hexo-以及執行-deploy"></a>
+<a name="%E5%8A%A0%E5%85%A5-hexo-%E4%BB%A5%E5%8F%8A%E5%9F%B7%E8%A1%8C-deploy"></a>
 # 加入 Hexo 以及執行 Deploy
 最後當然是把 hexo 套件安裝好，然後執行`hexo generate`來產生檔案，以及`hexo deploy`來自動發布，因為我自己還要把 blog 文章丟去 ElasticSearch Server 建立 index 來做搜尋索引，所以會再多一些東西，最後完成的 .travis.yml 大概如下：
 
-<a name="補充："></a>
+<a name="%E8%A3%9C%E5%85%85%EF%BC%9A"></a>
 ## 補充：
 一開始忘了把 package.json 內相關套件安裝，所以後來才又補上 `npm install`，以及增加個 cache，才不用每次都重新安裝 node_modules 內的套件。
 
@@ -214,7 +214,7 @@ branches:
 
 ````
 
-<a name="後記"></a>
+<a name="%E5%BE%8C%E8%A8%98"></a>
 # 後記
 
 雖然好像不複雜，可是我也是照著大大的教學文章，做了好幾個小時，不斷的失敗，不斷的找其他資料參考，最後才完成這小小的流程。希望之後可以越來越上手嘍～
@@ -224,6 +224,6 @@ branches:
 
 [用Travis CI自动部署Hexo博客](https://www.karlzhou.com/2016/05/28/travis-ci-deploy-blog/) <-- 推薦這篇，很詳細
 [用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/) <-- Hexo作者大大的文章
-[用 Travis CI 自動部屬 hexo 到 GitHub](Source: https://ssarcandy.tw/2016/07/29/hexo-auto-deploy/)
+[用 Travis CI 自動部屬 hexo 到 GitHub](https://ssarcandy.tw/2016/07/29/hexo-auto-deploy/)
 [使用 Travis CI 自动更新 Hexo Blog](http://xwartz.xyz/pupa/2016/06/auto-update-with-travis-ci/)
 
