@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - '4'
+  - '6.9'
 
 cache:
   directories:
@@ -27,11 +27,12 @@ install:
   - npm install
 
 before_script:
-#  - mv Anisina themes/
+  - export TZ=Asia/Taipei
 
 script:
   - hexo generate
   - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
+  - gulp
   - hexo deploy
 
 branches:
