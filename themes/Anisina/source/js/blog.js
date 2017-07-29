@@ -26,11 +26,54 @@ $(document).ready(function() {
     $('table').addClass('table');
 });
 
+var getParameterByName = function(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+
+$('#searchModal').on('hide.bs.modal', function(){
+    var url = location.href;
+    if (/\?query\=/.test(url)) {
+        location.href = location.origin;
+    }
+});
+
 // Search
 $(document).ready(function() {
     // if (window.location.href.includes('soarlin.github')) {
     //     $('#sidebar_search').hide();
     // }
+
+    var query = getParameterByName('query');
+    if (query !== null) {
+        // update ld+json content
+        var jsonld = JSON.parse($("#query_jsonld").text());
+        jsonld.potentialAction.target = location.origin + '?query={' + encodeURI(query) +'}';
+        jsonld.potentialAction['query-input'] += encodeURI(query);
+        $("#query_jsonld").text( JSON.stringify(jsonld) );
+
+        $("#result").html('');
+        // var esUrl = 'https://es.quizfun.co:3000/search/soarlin/blog/';
+        // ElasticSearch on Google Cloud Platform, DNS setting on godaddy
+        var esUrl = 'https://soar.stco.tw/search/blog/articles/';
+        var data = { keyword: query, size: 5};
+        $.post(esUrl, data, function(result) {
+            var resultHtml = createSearchResultList(result);
+            $("#result").append(resultHtml);
+            $("#result").delegate('.result-card', 'click', redirectToLink.bind(this));
+        });
+
+        $('#blog_search').val('');
+        $('#searchModal').modal('show');
+        return false;
+    } else {
+        $("#query_jsonld").remove();
+    }
 
     if ($('#blog_search').length) {
         $('#blog_search').keypress(function(e) {
@@ -40,7 +83,9 @@ $(document).ready(function() {
                 var keyword = $('#blog_search').val();
                 $('#search_key_word').text('"' + keyword + '"');
                 console.log('serach keyword = '+keyword);
+                location.href = location.origin + '?query=' + keyword;
 
+                /*
                 $("#result").html('');
                 // var esUrl = 'https://es.quizfun.co:3000/search/soarlin/blog/';
                 // ElasticSearch on Google Cloud Platform, DNS setting on godaddy
@@ -55,12 +100,13 @@ $(document).ready(function() {
                 $('#blog_search').val('');
                 $('#searchModal').modal('show');
                 return false;
+                */
             }
         });
     }
 
     function redirectToLink(object) {
-        var baseURI = object.currentTarget.baseURI;
+        var baseURI = object.currentTarget.baseURI.split('?')[0];
         var link = $(object.currentTarget).data('url');
         window.location.href = baseURI + link;
     }
