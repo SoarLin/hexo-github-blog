@@ -34,19 +34,12 @@ linkedin_username: soarlin
 instagram_username: soarlin
 codepen_username: SoarLin
 
-# Build settings
-anchorjs: false                        # if you want to customize anchor. check out line:181 of `post.html`
-
 # favicon
 favicon: /images/favicon.ico
 shortcut_icon: /images/favicon.ico
 
 # Disqus settings
 disqus_username: soarlin
-
-# Share component is depend on Comment so we can NOT use share only.
-# duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
 
 # Analytics settings
 # Baidu Analytics
@@ -152,6 +145,7 @@ robotstxt:
   allow:
     - /
     - /2016/
+    - /2017/
     - /archievs/
     - /categories/
     - /tags/
@@ -177,7 +171,7 @@ generator_amp:
       path:   sample/avatar.png                 #(optional)
       width:  150                               #(optional)
       height: 150                               #(optional)
-    description: Startup, Full Stack Development         #(optional)
+    description: Startup, Full Stack Development  #(optional)
   copyright_notice: © 2016 SoarLin              #(optional)
 
 # hexo-renderer-marked
@@ -215,12 +209,6 @@ deploy:
 
 # img CDN path
 cdn-url: https://soarlin.github.io/images/
-
-# Qiniu imageView2 API
-# More info http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
-clip-content: "?imageView2/1/w/1400/h/400/interlace/1/q/90"
-clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
-clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
 
 # post default images
 post-default-img: https://soarlin.github.io/images/background-0.jpg

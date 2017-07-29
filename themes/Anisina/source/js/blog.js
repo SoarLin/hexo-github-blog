@@ -50,9 +50,9 @@ $(document).ready(function() {
     // }
 
     var query = getParameterByName('query');
+    var jsonld = JSON.parse($("#query_jsonld").text());
     if (query !== null) {
         // update ld+json content
-        var jsonld = JSON.parse($("#query_jsonld").text());
         jsonld.potentialAction.target = location.origin + '?query={' + encodeURI(query) +'}';
         jsonld.potentialAction['query-input'] += encodeURI(query);
         $("#query_jsonld").text( JSON.stringify(jsonld) );
@@ -72,7 +72,8 @@ $(document).ready(function() {
         $('#searchModal').modal('show');
         return false;
     } else {
-        $("#query_jsonld").remove();
+        delete jsonld.potentialAction;
+        $("#query_jsonld").text( JSON.stringify(jsonld) );
     }
 
     if ($('#blog_search').length) {
