@@ -53,8 +53,8 @@ $(document).ready(function() {
     var jsonld = JSON.parse($("#query_jsonld").text());
     if (query !== null) {
         // update ld+json content
-        jsonld.potentialAction.target = location.origin + '?query={' + encodeURI(query) +'}';
-        jsonld.potentialAction['query-input'] += encodeURI(query);
+        jsonld.potentialAction.target = jsonld.potentialAction.target.replace('query_string', encodeURI(query));
+        jsonld.potentialAction['query-input'] = jsonld.potentialAction['query-input'].replace('query_string', encodeURI(query));
         $("#query_jsonld").text( JSON.stringify(jsonld) );
 
         $("#result").html('');
@@ -71,9 +71,6 @@ $(document).ready(function() {
         $('#blog_search').val('');
         $('#searchModal').modal('show');
         return false;
-    } else {
-        delete jsonld.potentialAction;
-        $("#query_jsonld").text( JSON.stringify(jsonld) );
     }
 
     if ($('#blog_search').length) {
