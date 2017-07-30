@@ -29,13 +29,17 @@
     <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
 
     <!-- Bootstrap Core CSS -->
-    <%- css('css/bootstrap.min.css') %>
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="/css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'">
     <!-- Custom CSS -->
-    <%- css('css/blog-style.css') %>
+    <link rel="stylesheet" href="/css/blog-style.css" media="none" onload="if(media!='all')media='all'">
+    <!-- FontsAwesome -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css" media="none" onload="if(media!='all')media='all'">
+
+    <noscript>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/blog-style.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+    </noscript>
 
     <!-- Pygments Github CSS -->
     <% /*css('css/syntax')*/ %>
@@ -46,4 +50,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+    body { color: #202020; }
+    </style>
 </head>
