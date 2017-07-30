@@ -1,24 +1,32 @@
-/*!
- * Clean Blog v1.0.0 (http://startbootstrap.com)
- * Copyright 2015 Start Bootstrap
- * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
- */
+// var cb = function() {
+//     var css = ['/css/bootstrap.min.css', '/css/blog-style.css', '/css/font-awesome.min.css'];
+//     css.forEach(function(file){
+//         let cssLink = document.createElement('link');
+//         cssLink.ref = 'stylesheet';
+//         cssLink.href = file;
+//         document.getElementsByTagName('head')[0].appendChild(cssLink);
+//     });
+//     // var l = document.createElement('link');
+//     // l.rel = 'stylesheet';
+//     // l.href = '/css/bootstrap.min.css';
+//     // var h = document.getElementsByTagName('head')[0];
+//     // h.appendChild(l);
+// };
+// var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+//   webkitRequestAnimationFrame || msRequestAnimationFrame;
+// if (raf) {
+//     raf(cb);
+// } else {
+//     window.addEventListener('load', cb);
+// }
+loadCSS( "/css/bootstrap.min.css" );
+loadCSS( "/css/blog-style.css" );
+loadCSS( "/css/font-awesome.min.css" );
 
 // Tooltip Init
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
-
-
-// make all images responsive
-/*
- * Unuse by Hux
- * actually only Portfolio-Pages can't use it and only post-img need it.
- * so I modify the _layout/post and CSS to make post-img responsive!
- */
-// $(function() {
-//  $("img").addClass("img-responsive");
-// });
 
 // responsive tables
 $(document).ready(function() {
