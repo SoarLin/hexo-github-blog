@@ -1,27 +1,6 @@
-// var cb = function() {
-//     var css = ['/css/bootstrap.min.css', '/css/blog-style.css', '/css/font-awesome.min.css'];
-//     css.forEach(function(file){
-//         let cssLink = document.createElement('link');
-//         cssLink.ref = 'stylesheet';
-//         cssLink.href = file;
-//         document.getElementsByTagName('head')[0].appendChild(cssLink);
-//     });
-//     // var l = document.createElement('link');
-//     // l.rel = 'stylesheet';
-//     // l.href = '/css/bootstrap.min.css';
-//     // var h = document.getElementsByTagName('head')[0];
-//     // h.appendChild(l);
-// };
-// var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-//   webkitRequestAnimationFrame || msRequestAnimationFrame;
-// if (raf) {
-//     raf(cb);
-// } else {
-//     window.addEventListener('load', cb);
-// }
-loadCSS( "/css/bootstrap.min.css" );
-loadCSS( "/css/blog-style.css" );
-loadCSS( "/css/font-awesome.min.css" );
+// loadCSS( "/css/bootstrap.min.css" );
+// loadCSS( "/css/blog-style.css" );
+// loadCSS( "/css/font-awesome.min.css" );
 
 // Tooltip Init
 $(function() {
