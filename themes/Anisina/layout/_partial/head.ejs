@@ -28,9 +28,6 @@
 
   <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
 
-  <!-- Critical CSS -->
-  <%- partial('_partial/critical-css') %>
-
   <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'">
   <!-- Custom CSS -->
@@ -53,8 +50,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <style>
-  body { color: #202020; }
-  header.intro-header{ background-image: url('<%= config["header-img"]%>'); }
-  </style>
+  <!-- Critical CSS -->
+  <%- partial('_partial/critical-css') %>
 </head>
