@@ -28,6 +28,9 @@
 
   <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
 
+  <!-- Critical CSS -->
+  <%- partial('_partial/critical-css') %>
+
   <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" href="/css/bootstrap.min.css" media="none" onload="if(media!='all')media='all'">
   <!-- Custom CSS -->
@@ -36,9 +39,9 @@
   <link rel="stylesheet" href="/css/font-awesome.min.css" media="none" onload="if(media!='all')media='all'">
 
   <noscript>
-      <link rel="stylesheet" href="/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/css/blog-style.css">
-      <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/blog-style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
   </noscript>
 
   <!-- Pygments Github CSS -->
