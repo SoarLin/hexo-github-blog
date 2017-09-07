@@ -1277,3 +1277,11 @@ a.result-title {
 .label-space {
     margin: 0 5px 0 0;
 }
+
+/* 修正modal dialog位置 */
+.modal-dialog {
+    margin-top: 160px;
+}
+.result-category .label {
+    display: inline-block;
+}
