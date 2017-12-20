@@ -6,9 +6,13 @@ cdn: header-off
 header-img: ''
 date: 2017-12-18 23:32:17
 tags:
- - 'secure'
+ - 'security'
  - 'composer'
  - 'https'
+ - 'injection'
+ - 'XSS'
+ - 'CSRF'
+ - 'password'
 categories:
  - 'PHP'
 ---
