@@ -1,6 +1,6 @@
 ---
 layout: post
-title: apple-pay-on-the-web-開發筆記
+title: Apple Pay on the Web 開發筆記
 author: Soar Lin
 cdn: header-off
 header-img: 'https://soarlin.github.io/images/ApplePayOnTheWeb.png'
