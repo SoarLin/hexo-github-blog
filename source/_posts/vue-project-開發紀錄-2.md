@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Vue.Js 專案開發紀錄 Part2
+title: Vue.Js 專案開發紀錄 Part 2
 author: Soar Lin
 cdn: header-off
 header-img: ''
