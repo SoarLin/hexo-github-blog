@@ -208,13 +208,22 @@ POSIX
 
 而我需要有zh_TW, zh_CN, ja_JP，所以需要自行在安裝這幾個語系的檔案
 
+*備註: 這是在 Ubuntu 14.04 環境下*
 ````
 sudo /usr/share/locales/install-language-pack zh_TW
 sudo /usr/share/locales/install-language-pack zh_CN
 sudo /usr/share/locales/install-language-pack ja_JP
 ````
 
+如果是 *Ubuntu 16.04* ，在 zh_TW 與 zh_CN，就需要換成 `zh_TW.UTF-8` 與 `zh_CN.UTF-8`，所以指令會變成下面這樣
+````
+sudo /usr/share/locales/install-language-pack zh_TW.UTF-8
+sudo /usr/share/locales/install-language-pack zh_CN.UTF-8
+sudo /usr/share/locales/install-language-pack ja_JP
+````
+
 其實都到這裡了，應該要可以跑吧！**但是**還是沒那麼簡單，因為 Mac OSX 的系統與 Ubuntu 系統內的名稱還是不太一樣
+
 
 MAC OSX下的`locale -a`可以看到，語系種類非常多種，跟剛剛在 server 上看到那兩三個相差甚遠
 ````
