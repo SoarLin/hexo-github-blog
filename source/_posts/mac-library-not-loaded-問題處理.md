@@ -13,6 +13,12 @@ tags:
 categories:
   - macOS
 ---
+<!-- MarkdownTOC -->
+
+- [使用 otool 工具檢查相依性](#使用-otool-工具檢查相依性)
+- [使用 install_name_tool 修正 dylib 路徑](#使用-install_name_tool-修正-dylib-路徑)
+
+<!-- /MarkdownTOC -->
 
 
 最近在處理 PHP 翻譯檔的問題，好不容易將所有翻譯的資料放到 Onesky 上後，發現下載下來的 .po 檔，要轉成 .mo 檔時，遇到了奇怪的動態庫載入問題。後來迫不得已努力的去找相關資料來解決，好不容易找到一篇教學是我可以看得懂的了。
