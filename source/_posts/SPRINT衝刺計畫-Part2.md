@@ -126,7 +126,7 @@ Rich, Chocolatey, comforting....
     9. 由方案作者說明成員們沒注意到的部份，並回答問題
     10. 轉到下一份草圖，重複上述流程
 
-![快速評論](/images/SPRINT/快速評論.jpg)
+![快速評論](/images/SPRINT/quick_comment.jpg)
 
 * 稻草民調: 每個人選一個方案，用圓點貼紙表達自己的意見
     1. 發給每人一票
@@ -137,7 +137,7 @@ Rich, Chocolatey, comforting....
     6. 時間一到或所有人都準備好的時候，把代表選票的大圓點貼到方案草圖上
     7. 每個人扼要解釋自己的選擇(1 min)
 
-![稻草民調](/images/SPRINT/稻草民調.jpg)
+![稻草民調](/images/SPRINT/straw_poll.jpg)
 
 * 超級票: 決策者用更多圓點貼紙投出「超級票」
     * 目的是替團隊做出最終決定。每一個決策者可獲得三張特別票，而無論他們把票投給哪些方案或構想，衝刺計畫團隊都將依據此做原型和測試
@@ -169,7 +169,7 @@ Rich, Chocolatey, comforting....
 <a name="分鏡腳本"></a>
 ### 分鏡腳本
 
-![分鏡腳本](/images/SPRINT/分鏡腳本.jpg)
+![分鏡腳本](/images/SPRINT/split_script.jpg)
 
 * 畫網格，大概需要15個框格，從顧客接觸到產品的開場開始設計 `e.g. APP 從 App Store開始`，虛擬的媒體報導也是個好的開場
 * 選擇一個開場
@@ -187,7 +187,7 @@ Rich, Chocolatey, comforting....
     * 有疑問時，大膽一點: 衝刺計畫最好用來測試潛在報酬很高、相當冒險的方案。
     * 把故事控制在15分鐘以內
 
-![分鏡範例](/images/SPRINT/分鏡範例.jpg)
+![分鏡範例](/images/SPRINT/split_mirror_example.jpg)
 
 <a name="促進者筆記-1"></a>
 ## 促進者筆記

@@ -33,7 +33,7 @@ photos:
 ## 使用者磁碟限額
 
 * 參考資料：
-    1. [quota - 磁碟配額](http://note.drx.tw/2008/03/disk-quota.html)
+    1. [quota - 磁碟配額](https://note.drx.tw/2008/03/disk-quota.html)
     2. [Linux 磁碟配額 (Quota)](http://linux.vbird.org/linux_basic/0420quota/0420quota-fc4.php)
 
 #### 檢查使用者磁碟限額
@@ -157,11 +157,11 @@ password=oooo
 0 4 * * 6 /bin/sh -c 'system_backup/backup.sh >> /mnt/nas/system_backup/backup.log 2>&1’
 ````
 
-![crontab時間含義](http://i.imgur.com/OGytWih.gif)
+![crontab時間含義](https://i.imgur.com/OGytWih.gif)
 
 <a name="建立群組共用目錄"></a>
 ## 建立群組共用目錄
-[參考資料](http://www.babyface2.com/NetAdmin/41200906basic/)
+[參考資料](https://www.babyface2.com/NetAdmin/41200906basic/) (20190813已失效)
 
 **請先切換成root帳號**
 

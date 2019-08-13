@@ -121,9 +121,9 @@ A: 顧客會信任我們的專業知識嗎？
 * 簡單為上: 中間步驟應該介於5~15個左右
 * 尋求協助: 繪製過程中，應不時詢問成員「這個圖看起來對嗎」
 
-![示意圖1](/images/SPRINT/示意圖1.jpg)
-![示意圖2](/images/SPRINT/示意圖2.jpg)
-[示意圖原圖](/images/SPRINT/示意圖_page.jpg)
+![示意圖1](/images/SPRINT/sketch_map1.jpg)
+![示意圖2](/images/SPRINT/sketch_map2.jpg)
+[示意圖原圖](/images/SPRINT/sketch_map_page.jpg)
 
 示意圖可能會持續修改調整，不用太意外
 
