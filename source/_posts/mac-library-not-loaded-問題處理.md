@@ -16,7 +16,7 @@ categories:
 <!-- MarkdownTOC -->
 
 - [使用 otool 工具檢查相依性](#使用-otool-工具檢查相依性)
-- [使用 install_name_tool 修正 dylib 路徑](#使用-install_name_tool-修正-dylib-路徑)
+- [使用 install_name_tool 修正 dylib 路徑](#使用-installnametool-修正-dylib-路徑)
 
 <!-- /MarkdownTOC -->
 
@@ -34,6 +34,7 @@ dyld: Library not loaded: /usr/local/lib/libgettextsrc-0.19.8.dylib
 
 簡單的說就是 `msgfmt` 在運行時，有些相依的動態庫檔案找不到了，而第一個遇到的是 libgettextsrc 這個檔案，因為先前透過 homebrew 安裝 gettext 時，似乎已經更新到 0.20.1 的版本，而舊的 0.19.8 的動態庫檔案可能就因為這樣失效了，所以最簡單的作法就是把 `msgfmt` 相依的動態庫黨，路徑替換成 homebrew 安裝的新版本上。
 
+<a id="使用-otool-工具檢查相依性"></a>
 ## 使用 otool 工具檢查相依性
 針對一個要執行的應用程式，macOS 本身似乎提供了一個工具可以檢查所有相依的檔案位置，那就是 `otool` 關於這工具的使用方式太多了，這邊只說我會用到的部分！
 
@@ -55,6 +56,7 @@ $> otool -L /usr/local/bin/msgfmt
 
 而一開始遇到的 libgettextsrc-0.19.8.dylib 這連結已經失效，所以需要手動替換成 homebrew 安裝 gettext 0.20.1 版本下的檔案，而透過 homebrew 安裝的程式，路徑大多位於 `/usr/local/Cellar/` 下面，所以在下面找一下 gettext 後可以再看到裡面有 lib 的資料夾，而資料夾下應該就是這次所需要的相關的 dylib 檔案了
 
+<a id="使用-installnametool-修正-dylib-路徑"></a>
 ## 使用 install_name_tool 修正 dylib 路徑
 
 ```
