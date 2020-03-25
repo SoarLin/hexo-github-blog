@@ -192,11 +192,19 @@ const FCMconfig = {
 
 firebase.initializeApp(FCMconfig)
 
-Vue.prototype.$messaging = firebase.messaging()
-Vue.prototype.$messaging.usePublicVapidKey('<YOUR_PUBLIC_VAPID_KEY>')
+Vue.prototype.$messaging = null
+if (firebase.messaging.isSupported()) {
+  firebase.initializeApp(FCMconfig)
+  // Retrieve Firebase Messaging object, assign to Vue Object
+  Vue.prototype.$messaging = firebase.messaging()
+  // Add the public key generated from the Firebase console
+  Vue.prototype.$messaging.usePublicVapidKey(process.env.VAPID_KEY)
+}
 
+// Change server-worker.js register path
 navigator.serviceWorker.register('/static/firebase-messaging-sw.js')
   .then((registration) => {
+    Vue.prototype.$swRegistration = registration
     Vue.prototype.$messaging.useServiceWorker(registration)
   }).catch(err => {
     console.log(err)
