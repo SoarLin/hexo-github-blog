@@ -32,7 +32,6 @@ categories:
 
 <!-- /MarkdownTOC -->
 
-
 這幾個月來一直懶得更新文章，其實一直想找時間把最近工作的一些事項做些紀錄，結果都一直在看新入坑女團(GFriend)的影片，由於昨天一整天一直在鬼打牆，早上打破一片牆，下午又再遇到一片牆，好在下班前有所突破，趁著記憶猶新的時候，趕緊紀錄一下。
 
 其實到目前為止，本身對於 PWA (Progressive Web Apps) 沒啥研究，所以對 Service Worker 也不太了解，在這種情況下就去串接 Firebase Cloud Messaging，真的有點越級挑戰了，所以一直碰到問題也很正常，甚至一度不曉得該先解決什麼問題，雖然下班前有完成一個簡單的 Web Push Notification，但還是覺得有些運氣成份在。
@@ -41,19 +40,20 @@ categories:
 
 有個自己每次重開機就會遇到的問題：
 
-* node 版本需要 8.x 以上才能執行，所以透過 nvm 來裝不同版本切換
+- node 版本需要 8.x 以上才能執行，所以透過 nvm 來裝不同版本切換
 
 ## Vue 專案內使用共同 SASS 資源
 
 另外為了全域共同 sass 檔案來做一些定義，如：變數, Mixins, class 等，也是花了一番功夫
 
 由於不是本篇重點，所以只記錄重點
+
 1. `npm install --save-dev sass-resources-loader`
 2. 修改 `/build/utils.js` 檔案內的 `exports.cssLoaders` function
 
 大致修改如下：把原本 sass loader 的 function 替換成新加入的 function
 
-````
+```
 exports.cssLoaders = function (options) {
   options = options || {}
   const cssLoader = {...}
@@ -108,7 +108,7 @@ exports.cssLoaders = function (options) {
     styl: generateLoaders('stylus')
   }
 }
-````
+```
 
 接下來進入正題，其實 vue + firebase cloud messaging 網路上找也有一些相關文章或[範例](https://github.com/invokemedia/vue-push-notification-example)，而且 firebase 本身也有介紹如何在 client 的 Javascript 設置 FCM ( [Set Up a JavaScript Firebase Cloud Messaging Client App](https://firebase.google.com/docs/cloud-messaging/js/client) )，而我一開始也是按照 firebase 上的文章做，但沒多久就碰到問題，無法取得 token....XD
 
@@ -124,7 +124,7 @@ exports.cssLoaders = function (options) {
 
 裡面最重要的一行，就是記得加上 `gcm_sender_id`，這在 firebase 教學文件裡的步驟有提到
 
-````
+```
 {
   "short_name": "YOUR_PROJECT_SHORT_NAME",
   "name": "YOUR_PROJECT_NAME",
@@ -139,15 +139,15 @@ exports.cssLoaders = function (options) {
   "background_color": "#ecf0f2",
   "display": "fullscreen",
   "theme_color": "#34aeab",
-  "gcm_sender_id": "103953800507"
+  "gcm_sender_id": "YOUR_SENDER_ID"
 }
-````
+```
 
 而主要頁面 `index.html` 需要能夠讀取到 manifiest.json 檔案，所以 index.html 內的 &lt;head&gt; 需要加入底下這行
 
-````
+```
 <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
-````
+```
 
 ### firebase-messaging-sw.js
 
@@ -155,7 +155,7 @@ exports.cssLoaders = function (options) {
 
 ![Firebase Sender ID](/images/vue_firebase/sender_id.png)
 
-````
+```
 // [START initialize_firebase_in_sw]
 // Import and configure the Firebase SDK
 // These scripts are made available when the app is served or
@@ -172,7 +172,7 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 // [END initialize_firebase_in_sw]
-````
+```
 
 ### src/main.js
 
@@ -180,7 +180,7 @@ const messaging = firebase.messaging();
 
 底下是目前使用的方式，在 `/src/main.js` 裡面將 FCM 設定好，這裡需要先取的 web push 所需要的 public VAPID key，可以參考[這裡](https://firebase.google.com/docs/cloud-messaging/js/client#configure_web_credentials_with_fcm)
 
-````
+```
 const FCMconfig = {
   apiKey: 'YOUR_API_KEY',
   authDomain: 'YOUR_DOMAIN',
@@ -209,7 +209,7 @@ navigator.serviceWorker.register('/static/firebase-messaging-sw.js')
   }).catch(err => {
     console.log(err)
   })
-````
+```
 
 上述使用 `Vue.prototype.$messaging` 來引入全域變數 `$messaging` 方便後面在不同 .vue 檔內都可以使用，所以接下來就可以真的來取得 push token 了
 
@@ -217,7 +217,7 @@ navigator.serviceWorker.register('/static/firebase-messaging-sw.js')
 
 接著就可以在 vue 內，可以參考下面範例
 
-````javascript
+```javascript
 <template>
   <div>
     ...
@@ -284,7 +284,7 @@ export default {
 <style lang="sass" scoped>
 // ...
 </style>
-````
+```
 
 ## Get Push Notification
 
@@ -292,39 +292,44 @@ export default {
 
 ### 網站開啟時，收到推播
 
-
 透過 `firebase messaging` 的 `onMessage` 來接收通知
-````
-this.$messaging.onMessage((payload) => {
-  console.log('Message receiver ', payload)
-  let notification = payload.notification
-  console.log('Notification: ', notification)
-})
-````
+
+```javascript
+this.$messaging.onMessage(payload => {
+  console.log('Message receiver ', payload);
+  let notification = payload.notification;
+  console.log('Notification: ', notification);
+});
+```
 
 ### 網頁關閉下，收到推播
 
-
 透過在 service worker 內寫的背景接收通知的處理，所以原本的 sw.js 又要繼續第二部分的 code
-````
+
+```javascript
 messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  console.log(
+    '[firebase-messaging-sw.js] Received background message ',
+    payload
+  );
   // Customize notification here
-  var notification = payload.notification
+  var notification = payload.notification;
   var notificationTitle = notification.title;
   var notificationOptions = {
     body: notification.body,
     icon: '/static/images/logo.png'
   };
 
-  return self.registration.showNotification(notificationTitle,
-    notificationOptions);
+  return self.registration.showNotification(
+    notificationTitle,
+    notificationOptions
+  );
 });
-````
-
+```
 
 所以完整的 `firebase-messaging-sw.js` 檔案如下：
-````
+
+```javascript
 importScripts('https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js');
 firebase.initializeApp({
@@ -334,19 +339,38 @@ const messaging = firebase.messaging();
 
 // Background Message Handler
 messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  console.log(
+    '[firebase-messaging-sw.js] Received background message ',
+    payload
+  );
   // Customize notification here
-  var notification = payload.notification
+  var notification = payload.notification;
   var notificationTitle = notification.title;
   var notificationOptions = {
     body: notification.body,
     icon: '/static/images/logo.png'
   };
 
-  return self.registration.showNotification(notificationTitle,
-    notificationOptions);
+  const promiseChain = clients
+    .matchAll({
+      type: 'window',
+      includeUncontrolled: true
+    })
+    .then(windowClients => {
+      for (let i = 0; i < windowClients.length; i++) {
+        const windowClient = windowClients[i];
+        windowClient.postMessage(notify);
+      }
+    })
+    .then(() => {
+      return self.registration.showNotification(
+        notificationTitle,
+        notificationOptions
+      );
+    });
+  return promiseChain;
 });
-````
+```
 
 ## 發送推播
 
