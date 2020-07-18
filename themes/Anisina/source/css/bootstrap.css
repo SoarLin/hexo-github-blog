@@ -1105,6 +1105,9 @@ a:focus {
 figure {
   margin: 0;
 }
+figure.highlight {
+  margin-bottom: 15px;
+}
 img {
   vertical-align: middle;
 }
