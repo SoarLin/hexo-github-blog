@@ -502,6 +502,7 @@ Chronicle 是個基於 hash-chain 資料結構的 只進行追加(append-only)�
 * [Mozilla's SSL Config Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 * [Let's Encrypt](https://letsencrypt.org/)，通過證書頒發機構提供免費 TLS 證書來創造更安全的網路。
 * [Qualys SSL Labs](https://www.ssllabs.com/ssltest) 提供一個快速又簡單的工具來測試 TLS 配置，幾乎每個人都用這個來解決他們安全憑證相關問題。
+* [SSL Checker](https://www.websiteplanet.com/webtools/ssl-checker/) 提供SSL檢查的工具，介面友善好操作，網站上還有其他有用的工具可以參考使用。
 * [Security Headers](https://securityheaders.io/) 讓您可以使用瀏覽器安全功能來保護您的用戶，且驗證網站安全。
 * [Report-URI](https://report-uri.com/) 一個不錯的免費網路資源，用來開始檢查檔頭安全。如果有發現 XSS 的媒介，會被通報到 Report-URI，讓 Report-URI 彙整這些問題來提供你更好的服務。
 * [The PHP Security Advent Calendar](https://www.ripstech.com/php-security-calendar-2017) by the team behind [RIPSTech](https://www.ripstech.com/)。
