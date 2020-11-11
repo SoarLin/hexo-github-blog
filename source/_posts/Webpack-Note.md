@@ -123,7 +123,7 @@ module.exports = devConfig;
 ## Config 檔內使用 path 套件
 
 * 修改過得目錄結構
-![修改過得目錄結構](https://lh3.googleusercontent.com/-BDzL0Z2GWFM/VwPgLAZ7SEI/AAAAAAAAKsw/bjSuLLcV4NwyKYy-4EjCnhP3-1pYhb_hg/s0/path.JPG "path.JPG")
+![修改過得目錄結構](/images/webpack/path.jpg)
 
 ````javascript
 var path = require('path');
