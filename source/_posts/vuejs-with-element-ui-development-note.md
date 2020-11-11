@@ -20,7 +20,7 @@ categories:
 
 不過 Vuesax 的 input 真的做得好精緻，除了有底線顏色、驗證狀態，還可以讓 placeholder 躍升變成 label，以及 checkbox 跟 switch 的一些畫面小動畫，感覺在表單製作上可以做得很精緻，在專案中用它建立了一個簡單的登入畫面覺得很滿意，可惜後來登入頁面被捨棄，沒辦法展現一下。不過實際上在使用 Vuesax 開發時，還是覺得看文件編開發卡卡的，可能還不太習慣用 UI Component 來開發吧！
 
-後來另一個專案想說換一個玩看看，就選了 Element，發現這個真的好用很多，可能真的因為文件有中文的吧(先加100分)！實作上也覺得 Layout 跟 Container 比較快上手，也可能是經歷了之前一個套件的關係吧！而這次開發時，碰到了幾個小問題，一個是以前也碰過只是解法有點複雜的在 Vue 專案內讓每個元件可以引入共同的 SASS/SCSS 檔案，另一個則是因為用了 UI Component 後可能會遇到的問題，在寫 style 的時候，無法去客製化引用的 UI 元件，正確來說應該是寫的 css selector 無法複寫到元件內的樣式，底下就針對這兩個來記錄說明吧！
+後來另一個專案想說換一個玩看看，就選了 Element，發現這個真的好用很多，可能真的因為文件有中文的吧(先加100分)！實作上也覺得 Layout 跟 Container 比較快上手，也可能是經歷了之前一個套件的關係吧！而這次開發時，碰到了幾個小問題，一個是以前也碰過只是解法有點複雜的在 Vue 專案內讓每個元件可以引入共同的 Sass/SCSS 檔案，另一個則是因為用了 UI Component 後可能會遇到的問題，在寫 style 的時候，無法去客製化引用的 UI 元件，正確來說應該是寫的 css selector 無法複寫到元件內的樣式，底下就針對這兩個來記錄說明吧！
 
 ## 開發環境紀錄
 * Node v12.18
@@ -104,3 +104,41 @@ import 'assets/element-ui/style/index.css'
 ```
 
 ### Method 3 - Use Deep Selector
+這應該是目前最佳的解法，既不用取消 scoped 避免 style 影響到全局，也不用辛苦的維護一整份 css 檔案，而是透過 deep selector 來複寫到元件內的樣式，不過在網路上看到了幾種寫法，自己測試了很多次後，似乎只有一種寫法能正常運作。
+
+* Use `>>>`，不過這個在 Sass/SCSS 似乎無法被正確解析，應該比較適合單純 CSS 的用法
+
+```
+<style scoped>
+.a >>> .b { /* ... */ }
+</style>
+```
+
+* Use `/deep/` or `::v-deep`
+在一些 pre-processors 的語法下，可以改用上述的兩個語法，不過自己實作時似乎 `/deep/` 無法正常被解析編譯，只有 `::v-deep` 試驗成功。
+
+使用 `/deep/` 時，編譯會出錯，類似下面的錯誤訊息
+```
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: expected selector.
+    ╷
+278 │       /deep/ .el-input input{
+    │       ^
+    ╵
+  /<MY-VUE-PROJECT>/pages/UserList.vue 278:7  root stylesheet
+```
+
+底下是一個要修改 el-input 元件邊框顏色的範例，當使用者輸入驗證有錯時，想把 input 的邊框改成紅色
+```
+.add-user-dialog {
+  .input-field {
+    &.invalid {
+      ::v-deep .el-input input {
+        border-color: $redColor;
+      }
+    }
+  }
+}
+```
+
+以上大概是這次做 Vue 小專案搭配不同的 UI Component Library 的一些心得跟筆記。只是這篇文章無法一氣呵成的寫完，分了三、四天來寫，寫文章記錄真的是件苦差事，不過還是希望自己能繼續保持這個好習慣。
