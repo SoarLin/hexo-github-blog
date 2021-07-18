@@ -1,63 +1,40 @@
-dist: trusty
-sudo: required
-
-addons:
- ssh_known_hosts:
-   - github.com
-   - git.coding.net
- apt:
-   packages:
-     - nasm
-
-env:
- global:
-   - TZ=Asia/Tokyo
-
 language: node_js
-node_js: node
+
+node_js:
+  - 12
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - export TZ=Asia/Taipei
+  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in .travis/id_rsa_github.enc -out ~/.ssh/id_rsa -d
+
+  - chmod 600 ~/.ssh/id_rsa
+
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+
+  - cp .travis/ssh_config ~/.ssh/config
+
+  - git config --global user.name "Soar Lin"
+  - git config --global user.email soar.lin@gmail.com
+
+  - npm install -g hexo-cli
+
+install:
+  - npm install
+
+before_script:
+  - export TZ=Asia/Taipei
+
+script:
+  - hexo generate
+  # - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
+  - gulp
+  - hexo deploy
 
 branches:
  only:
-   - source
-
-git:
- depth: false
- submodules: false
-
-cache:
- apt: true
- npm: true
-
-before_install:
- # Git Config
- - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
- - git config --global user.name "SoarLin"
- - git config --global user.email "soar.lin@gmail.com"
-
- # Restore last modified time
- - "git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done"
-
- # Submodules
- - git submodule update --recursive --remote --init
-
- # Deploy history
- - git clone --branch=master --single-branch soarlin.github.io .deploy_git
-
- # SSH Setup
- - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in deploy_key.enc -out deploy_key -d
- - eval "$(ssh-agent -s)"
- - chmod 600 ./deploy_key
- - ssh-add ./deploy_key
-#  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in .travis/id_rsa_github.enc -out ~/.ssh/id_rsa -d
-#  - chmod 600 ~/.ssh/id_rsa
-#  - eval $(ssh-agent)
-#  - ssh-add ~/.ssh/id_rsa
-#  - cp .travis/ssh_config ~/.ssh/config
-
-install: npm install
-
-before_script:
-
-script:
- - hexo clean
- - hexo g -d
+  - master
