@@ -179,7 +179,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/SoarLin/soarlin.github.io.git
+  repo: git@github.com:SoarLin/soarlin.github.io.git
   branch: master
   message: "Deploy By Hexo at {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
