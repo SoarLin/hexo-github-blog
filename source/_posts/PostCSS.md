@@ -52,7 +52,7 @@ body {
     color: var(--fontColor);
 }
 ````
-
+<!-- more -->
 <a name="計算"></a>
 ## 計算
 * 使用function `calc`

@@ -48,7 +48,7 @@ Elasticsearch 仍是需要 Java 環境來運行，而 Java 版本至少需要 1.
 
 <a name="檢查-java-版本"></a>
 ### 檢查 Java 版本
-
+<!-- more -->
 ````
 java -version
 echo $JAVA_HOME

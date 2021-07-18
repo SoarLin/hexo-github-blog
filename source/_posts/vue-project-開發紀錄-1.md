@@ -20,7 +20,7 @@ categories:
 ````
 vue init webpack <project-name>
 ````
-
+<!-- more -->
 ````
 // 這裏 project-name 以 vue-hello 為例
 

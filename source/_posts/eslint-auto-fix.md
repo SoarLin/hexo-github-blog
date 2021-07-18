@@ -19,6 +19,8 @@ categories:
 
 操作步驟 :
 
+<!-- more -->
+
 - 原本的 package.json 內，新增一個有自動修正的 script `lint-fix`
 
 ```

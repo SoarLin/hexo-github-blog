@@ -25,7 +25,7 @@ categories:
 網路上搜尋關於 slim 3 + i18n，出現的文章其實都有段時間了，有時候跟著做到後來，發現似乎不合用，所以這裡記錄一下，希望能夠幫助到其他有需要的人(或是兩個月後的自己)
 
 其實歸納到最後，是使用 PHP 推薦的 [gettext](http://php.net/manual/en/book.gettext.php) 的方式來實踐多語系版本，而 slim 3 搭配的樣版引擎 Twig，本身也有提供 Extension 套件(i18n)來實作，所以找到 gettext 的教學文章，看懂基本原理後，再搭配 twig i18n 的套件來實作，底下收錄我後來覺得最實用的參考文章
-
+<!-- more -->
 ## 參考資料
 
 * [Easy Multi-Language Twig Apps with Gettext](https://www.sitepoint.com/easy-multi-language-twig-apps-with-gettext/)

@@ -63,7 +63,7 @@ npm install -g serverless
 - API Gateway : 用來管理後台 Server or Lambda 等的 API 接口服務，這裡是用來觸發 Lambda function 執行運算
 - CloudWatch : 可以檢視 Lambda 上 Function 執行時所留下的 log，協助開發中 Debug 使用
 
-
+<!-- more -->
 <a name="aws-前置作業---iam"></a>
 ### AWS 前置作業 - IAM
 如果已經有安裝 AWS 提供的 command line tool ([aws-cli](https://aws.amazon.com/tw/cli/))，可能會方便一點？沒有也沒關係，因為我也是到 aws console 介面上慢慢做的

@@ -65,7 +65,7 @@ Google Cloud Platform 初體驗
 進入 Compute Engine 的介面，選擇建立"執行個體"後，介面也都是中文的，很好理解，尤其是已經被 AWS 訓練過後，底下是我一開始的設定
 
 ![參考圖1](https://soarlin.github.io/images/gcp/gce1.png)
-
+<!-- more -->
 * 名稱 : micro-elasticsearch-server(請自訂吧！)
 * 區域 : us-east-a (為了省錢，先放這邊吧！)
 * 機器類型 : 微型(f1-micro)

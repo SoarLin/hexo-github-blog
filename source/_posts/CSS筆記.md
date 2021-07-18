@@ -65,7 +65,7 @@ categories:
 * fill-mode: 定義元素在動畫播放外(動畫開始前及結束後)的狀態, e.g. forwards(停在最後)
 * play-state: 控制動畫的播放狀態。有 pause 和 running 兩種值，後者為預設值。
 * name: keyframes 的名稱
-
+<!-- more -->
 <a name="transform-%E8%AE%8A%E5%8C%96"></a>
 ## Transform 變化
 
@@ -88,4 +88,3 @@ categories:
 * 動畫轉變時時間的加速曲線
 * 元素讀取完畢到動畫開始的延遲時間
 * 可以設定多組轉場
-

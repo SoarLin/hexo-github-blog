@@ -22,6 +22,7 @@ categories:
 
 ### App.vue
 這是原本專案建立時產生的 vue 檔，基本上所有內容都在從這裡面產生，底下的範例雖然會透過判斷 `getLoading` 來切換 loading 與顯示畫面，不過我後來實際開發時，把每個頁面或是每個區塊 loading 又另外做處理，所以最外層這個 loading 就沒再用了
+<!-- more -->
 ````
 <template>
   <div v-if="getLoading" class="ui active inverted dimmer">

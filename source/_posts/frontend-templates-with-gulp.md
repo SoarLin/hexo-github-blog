@@ -57,7 +57,7 @@ categories:
 * node v4.2.2
 * npm 3.9.2
 * bower 1.8.0
-
+<!-- more -->
 <a name="工具安裝"></a>
 ## 工具安裝
 
@@ -157,7 +157,3 @@ gulp bundle-vendor | 將前端所用 3rd 套件 JS 整合成單一檔案
 gulp watch | 自動偵測 scss, js, ejs 檔案變化, 執行對應動作
 gulp (default) | 預設執行動作, clean -> images, bundle-vendor, styles, scripts, html
 gulp **--env=production** | 輸出壓縮過的css與js檔
-
-
-
-

@@ -40,7 +40,7 @@ categories:
 [![Thursday](https://img.youtube.com/vi/MRDDLHDqc9o/0.jpg)](https://www.youtube.com/watch?v=MRDDLHDqc9o)
 
 花在某件東西上的時間越久，對它的依戀性往往卻強，而認真看待負面測試結果的可能性就越低。如果只花一天時間，你將能接受意見回饋。如果已經投入三個月，很可能已經決心撐到底。
-
+<!-- more -->
 <a name="原型心態"></a>
 ### 原型心態
 

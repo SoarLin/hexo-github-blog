@@ -43,6 +43,8 @@ module.exports = (env) => {
 ```
 傳入兩組 env 值的時候，所收到的 env 其實是一組陣列，各別是 `--env XXXXX` 裡面的 `XXXXX`，但是當傳入的只有一組 env 時，例如：`--env production`這時候 env 就是 `production` 這個值，就**不再是陣列了**
 
+<!-- more -->
+
 ```
 // 傳入一組 env 時
 npx webpack --env production --progress

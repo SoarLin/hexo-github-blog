@@ -25,7 +25,7 @@ categories:
 為了記住登入的使用者資訊，還是先從簡單的 PHP 寫 Session or Cookie 開始吧！因為考量到還沒開始使用 redis 來存取 Session，而正式部署的機器不只一台的情況，就先放棄 Session 這個方式，改以 Cookie 的方式來著手，可是花了一天的時間不段的嘗試，只要我在 Controller 內將 cookie 存好，透過 route 切換到新頁面，cookie 就會神秘的消失，即使後來看到 Slim Framework 官網上建議使用 [FIG Cookies](https://github.com/dflydev/dflydev-fig-cookies)，還是一直搞不清處為何 Request, Response 兩邊都去寫 cookie 了，透過 route 導向新頁面一樣無效...XD，最後經過一天的努力，宣告不治，放棄治療
 
 後來在找資料的同時有看到一個 Slim Framework 的教學影片，看著裡面逐步用一個精簡的框架打造成小有規模的架構，覺得很感動，所以隔天一早就開始了把現有的結構調整一下，看著目錄架構慢慢接近熟悉的 laravel 有點小感動，而且在電腦上運行都很正常，直到我把 code push 上去接著到測試機器上面測試後，發現糟糕了...出事了！
-
+<!-- more -->
 # 釐清問題
 
 由於將整個 Namespace 下的程式目錄名字更換了，所以特別記得要執行 `composer dump-autoload`，甚至在 Jenkins build 上也多加了這條指令，確保 build 完打包起來的程式碼是有引用到更換目錄名稱的 class，為了確定編譯後的程式碼，還特地把 jenkins 編譯後的檔案整包抓回本機測試，依然可以正常運行，但是上了測試機，就一直出現 Class not found 的錯誤訊息

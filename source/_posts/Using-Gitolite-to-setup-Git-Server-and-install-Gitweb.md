@@ -58,7 +58,7 @@ ssh-keygen
 cat ~/.ssh/id_rsa.pub
 #或上傳到 Server /tmp/目錄下統一保存
 ````
-
+<!-- more -->
 <a name="git-server-的設定"></a>
 ## Git Server 的設定
 - ssh 連線到 Server 上

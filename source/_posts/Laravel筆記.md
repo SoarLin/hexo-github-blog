@@ -75,7 +75,7 @@ categories:
   * 安裝 laravel-elixir-eslint 與 eslint-plugin-react (因為之前的 eslintrc 內有寫到)
   * `npm install --save-dev laravel-elixir-eslint eslint-plugin-react`
   * 增加 .eslintrc.json 檔案
-
+<!-- more -->
 ````json
 {
     "env": {

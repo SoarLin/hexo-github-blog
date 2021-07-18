@@ -32,6 +32,8 @@ dyld: Library not loaded: /usr/local/lib/libgettextsrc-0.19.8.dylib
 [1]    89445 abort      /usr/local/bin/msgfmt zoek.po -o zoek.mo
 ```
 
+<!-- more -->
+
 簡單的說就是 `msgfmt` 在運行時，有些相依的動態庫檔案找不到了，而第一個遇到的是 libgettextsrc 這個檔案，因為先前透過 homebrew 安裝 gettext 時，似乎已經更新到 0.20.1 的版本，而舊的 0.19.8 的動態庫檔案可能就因為這樣失效了，所以最簡單的作法就是把 `msgfmt` 相依的動態庫黨，路徑替換成 homebrew 安裝的新版本上。
 
 <a id="使用-otool-工具檢查相依性"></a>

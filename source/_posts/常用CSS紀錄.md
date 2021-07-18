@@ -48,7 +48,7 @@ categories:
 ````
 
 主要就用 main.scss 來 import 其他檔案來編譯， modules 裡面放些比較通用的資源，如： normalize (不過有另外用 bootstrap 的話應該不用在 import 了)、網站 CSS 通用變數、mixin 函式等等，而另一個 partials 就可能依照頁面名稱、功能來撰寫相關 CSS
-
+<!-- more -->
 所以 main.scss 的檔案大概就只會像這樣，這裡我還多了 body 的樣式，主要是用來控制全站頁面 body 的 padding
 
 ````

@@ -52,7 +52,7 @@ categories:
 2. 修改 `/build/utils.js` 檔案內的 `exports.cssLoaders` function
 
 大致修改如下：把原本 sass loader 的 function 替換成新加入的 function
-
+<!-- more -->
 ```
 exports.cssLoaders = function (options) {
   options = options || {}

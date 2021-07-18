@@ -47,6 +47,7 @@ categories:
 因此藍瓶團隊藉由這個概念，創造一組用來描述藍瓶咖啡豆的簡單風味詞彙：
 Rich, Chocolatey, comforting....
 ````
+<!-- more -->
 #### 閃電型示範
 
 ![閃電示範](/images/SPRINT/lightning.jpg)

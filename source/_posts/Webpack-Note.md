@@ -45,7 +45,7 @@ tags:
 
 <a name="npm-的-packagesjson"></a>
 ## npm 的 packages.json
-
+<!-- more -->
 * 修改 scripts 內容
   * `"start": "webpack-dev-server"`
   * 接著回到 command line

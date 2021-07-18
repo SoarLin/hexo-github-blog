@@ -52,7 +52,7 @@ sudo quotaon -av  啟動
 sudo quotaoff -a    全部關閉
 sudo quotaoff -u <UserName>
 ````
-
+<!-- more -->
 #### 編輯 使用者/群組 磁碟限額規則
 
 ````bash
@@ -225,4 +225,3 @@ sudo service ssh restart (ssh服務重啟)
 ````
 
 重新改用使用者帳號登入，就需要打密碼了，**前提是這個賬戶有設定密碼**
-

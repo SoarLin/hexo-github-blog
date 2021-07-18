@@ -30,6 +30,8 @@ categories:
 ## Makefile
 如果電腦有安裝 [aws-cli](https://aws.amazon.com/tw/cli/) 的話，可以考慮參考 aws-lambda-image 專案裡面的 Makefile 檔案，是個很好的學習範本
 
+<!-- more -->
+
 這裡擷取部分內容，資料來源：[https://github.com/ysugimoto/aws-lambda-image/blob/master/Makefile](https://github.com/ysugimoto/aws-lambda-image/blob/master/Makefile)
 
 ````

@@ -62,7 +62,7 @@ gem install travis
 ````
 travis login --auto
 ````
-
+<!-- more -->
 * 將自己的 private key 加到對應 repo，加入後會自動改寫 .travis.yml 檔案
 	* 我後來在專案下建立 .travis 目錄，然後將 private key 資料放進去
 
@@ -226,4 +226,3 @@ branches:
 [用 Travis CI 自動部署網站到 GitHub](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/) <-- Hexo作者大大的文章
 [用 Travis CI 自動部屬 hexo 到 GitHub](https://ssarcandy.tw/2016/07/29/hexo-auto-deploy/)
 [使用 Travis CI 自动更新 Hexo Blog](http://xwartz.xyz/pupa/2016/06/auto-update-with-travis-ci/)
-

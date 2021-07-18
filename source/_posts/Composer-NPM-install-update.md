@@ -29,7 +29,7 @@ categories:
 ## Composer.lock
 
 在安裝過相依套件後，會在專案底下額外產生一份 `Composer.lock` 檔案來鎖定目前安裝的相依套件版本與資訊，之後再執行 `install` 指令時，會先檢查這份 lock 檔案來安裝，所以當有版本變更或新增套件時，也是會更新這份資料
-
+<!-- more -->
 ## Composer install
 
 當 `composer install` 指令執行時，會依序執行以下行為
