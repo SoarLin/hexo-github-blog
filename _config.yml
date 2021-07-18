@@ -180,7 +180,7 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/SoarLin/soarlin.github.io.git
-  branch: gh-pages
+  branch: master
   message: "Deploy By Hexo at {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 
