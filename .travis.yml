@@ -41,7 +41,7 @@ before_install:
  - git submodule update --recursive --remote --init
 
  # Deploy history
- - git clone --branch=master --single-branch hexo-github-blog .deploy_git
+ - git clone --branch=master --single-branch soarlin.github.io .deploy_git
 
  # SSH Setup
  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in deploy_key.enc -out deploy_key -d
