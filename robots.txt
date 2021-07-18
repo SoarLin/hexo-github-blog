@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /search.json
+Allow: /
+Allow: /2016/
+Allow: /2017/
+Allow: /archievs/
+Allow: /categories/
+Allow: /tags/
+Sitemap: https://soarlin.github.io/sitemap.xml
