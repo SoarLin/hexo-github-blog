@@ -89,7 +89,7 @@ highlight:
   enable: true
   line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: ''
 
 # Category & Tag
 default_category: uncategorized
