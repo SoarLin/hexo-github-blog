@@ -32,7 +32,7 @@ before_script:
   - export TZ=Asia/Taipei
 
 script:
-  - hexo generate
+  # - hexo generate
   # - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
   # - gulp
   # - hexo g -d  # use local 'npm run deploy' to deploy blog content
