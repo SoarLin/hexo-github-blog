@@ -29,6 +29,7 @@ before_install:
   # - git config --global user.email soar.lin@gmail.com
 
   - npm install -g hexo-cli
+  - npm install hexo-theme-next
 
 install:
   - npm install
