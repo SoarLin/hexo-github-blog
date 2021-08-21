@@ -21,6 +21,7 @@ categories:
 
 目前正在開發的 mobile web 為了搭配某銀行的優惠活動，所以之前趕緊把整個購買流程跟會員登入的功能都補上去，結果請對方先行測試，果然都不會測試，等活動一上線才發現問題，問題就是 App 內開啟網頁後，facebook 登入的功能就...無效了！？
 
+<!-- more -->
 # 處理經過
 
 ## 嘗試一 - 手動建立登入流程
@@ -28,7 +29,7 @@ categories:
 原本就是按照Facebook Developer內文件教學來撰寫的，但還是出問題，只好先暫時改用[Facebook登入](https://developers.facebook.com/docs/facebook-login)裡面的進階做法了，裡面有個[手動建立登入流程](https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow)，照著這個做法，把原本fb登入呼叫API的行爲替換成一個帶有回傳網址(redirect_uri)的連結。
 
 不過很偷懶，回傳網址還是跟原本頁面一樣，只是在透過 js 把一些回傳參數接起來處理，另外也把一些對方反應我們提供的優惠怎麼只有新註冊會員才有，而原本我們服務的舊會員沒有享受到優惠這樣不行啦！所以除了改登入問題，順便偷渡了這個商業邏輯的處理上去。
-<!-- more -->
+
 **結果**
 * iOS 裝置都可以正常登入啦！(撒花～)
 * Android 裝置一樣毫無反應....Orz (哭哭)

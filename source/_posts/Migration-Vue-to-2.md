@@ -41,11 +41,12 @@ categories:
 
 目前專案用到的東西真的好複雜，gulp 流程要跑完都要好長一段時間，光 CSS 處理就從，純 CSS 到 CSS 前處理器(包含 [Less](http://lesscss.org/), [Sass](http://sass-lang.com/))甚至還有後處理器 [PostCSS](http://postcss.org/)，而 JS Framework 也使用了兩個 [React.js](https://facebook.github.io/react/) 與 [Vue.js](https://vuejs.org/)，而原本 gulpfile 也從單純自己安裝套件到後來改為 [Laravel Elixir](https://laravel.com/docs/5.1/elixir) 的方式來處理，這些全都算是一種技術債吧！
 
+<!-- more -->
+
 而這次 Vue 的版本升級，也順便更新了 Laravel Elixir 的版本從 5 到 6，但似乎遇到了一個滿多人遇到的情況，在執行 gulp watch 時，會因為產生亂數版本號([version](https://laravel.com/docs/5.1/elixir#versioning-and-cache-busting)) 的動作出問題而程序終止，也因為這個問題讓我一度猶豫是否該把 elixir 版本降回去 5.0.x 版，但是昨晚也為了這付出了許多代價，結果還是失敗，只能放棄 gulp watch 這個美好的指令....XD
 
 <a name="升級前後版本比較"></a>
 ## 升級前後版本比較
-<!-- more -->
 這裡先將有相關工具升級前後，版本的資料紀錄一下，
 
 |       Tools    |    Before  |    After   |   備註      |

@@ -30,7 +30,7 @@ categories:
 
 
 其實一直都想研究一下 CI/CD 的一些流程，知道 Travis CI 可以結合 Github 上的專案來進行，那就先從一些簡單的小專案開始好了，上網找到一篇[文章](https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/)有 Travis CI 與 Github 以及 Hexo 的關鍵字，害我好興奮，看了好一陣子後決定上了！
-
+<!-- more -->
 <a name="%E5%89%8D%E6%9C%9F%E6%BA%96%E5%82%99"></a>
 # 前期準備
 
@@ -62,7 +62,7 @@ gem install travis
 ````
 travis login --auto
 ````
-<!-- more -->
+
 * 將自己的 private key 加到對應 repo，加入後會自動改寫 .travis.yml 檔案
 	* 我後來在專案下建立 .travis 目錄，然後將 private key 資料放進去
 

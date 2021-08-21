@@ -44,7 +44,7 @@ photos:
 ````bash
 sudo quota <UserName>
 ````
-
+<!-- more -->
 #### 啟動 / 關閉磁碟限額
 
 ````bash
@@ -52,7 +52,6 @@ sudo quotaon -av  啟動
 sudo quotaoff -a    全部關閉
 sudo quotaoff -u <UserName>
 ````
-<!-- more -->
 #### 編輯 使用者/群組 磁碟限額規則
 
 ````bash

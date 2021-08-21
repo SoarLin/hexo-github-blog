@@ -22,14 +22,14 @@ categories:
 
 <!-- /MarkdownTOC -->
 
-
-
 <a name="兩台-server-雙向同步"></a>
 # 兩台 Server 雙向同步
 
 - 同步工具 - unison ([參考連結](http://xmodulo.com/synchronize-files-between-two-servers.html))
 - 排程工具 - crontab
 - 目錄偵測工具 - inotifywait ( inotify-tools )
+
+<!-- more -->
 
 * 請先安裝 unison
 
@@ -66,7 +66,7 @@ auto = true
 # If you want to ignore difference in file props:
 perms = 0
 ````
-<!-- more -->
+
 * 確定兩台主機都可以使用 SSH 連到對方，中間牽涉到一些問題，比如：
     * 登入帳號是否具備有同步目錄以及子目錄的操作權限
     * 若要排程同步就要注意帳號登入問題，最好是都將對方的 SSH public key 加到 authorize_keys，免密碼登入

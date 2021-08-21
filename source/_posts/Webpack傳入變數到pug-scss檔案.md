@@ -17,6 +17,7 @@ tags:
 
 所以開始著手研究怎麼把路徑的變數，透過 webpack 編譯階段判斷目前是開發環境，還是 production 環境，來改變圖片等檔案的前綴路徑。底下就以 [pug-sass-template](https://github.com/SoarLin/pug-sass-template) 專案來說明幾個重要的步驟。
 
+<!-- more -->
 ## Step 1 - Webpack Get Environment Variables
 > 參考： https://webpack.js.org/guides/environment-variables/
 
@@ -42,8 +43,6 @@ module.exports = (env) => {
 };
 ```
 傳入兩組 env 值的時候，所收到的 env 其實是一組陣列，各別是 `--env XXXXX` 裡面的 `XXXXX`，但是當傳入的只有一組 env 時，例如：`--env production`這時候 env 就是 `production` 這個值，就**不再是陣列了**
-
-<!-- more -->
 
 ```
 // 傳入一組 env 時

@@ -41,6 +41,8 @@ categories:
 * clip: border-box|padding-box|content-box (沒用過)
 * attachment: scroll|fixed|local (沒用過)
 
+<!-- more -->
+
 <a name="animation-%E5%8B%95%E7%95%AB%E6%95%88%E6%9E%9C"></a>
 ## Animation 動畫效果
 
@@ -65,7 +67,7 @@ categories:
 * fill-mode: 定義元素在動畫播放外(動畫開始前及結束後)的狀態, e.g. forwards(停在最後)
 * play-state: 控制動畫的播放狀態。有 pause 和 running 兩種值，後者為預設值。
 * name: keyframes 的名稱
-<!-- more -->
+
 <a name="transform-%E8%AE%8A%E5%8C%96"></a>
 ## Transform 變化
 

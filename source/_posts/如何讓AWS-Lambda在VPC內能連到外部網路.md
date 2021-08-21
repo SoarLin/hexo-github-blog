@@ -24,13 +24,13 @@ categories:
 # Lambda Setup
 以前雖然有用過 lambda 開發過一些簡單的東西，可是通常僅限於直接在 lambda console 介面直接撰寫 node.js，唯一一次可以在本地端開發後上傳到 lambda 的小專案是使用別人包好的 [aws-lambda-image](https://github.com/ysugimoto/aws-lambda-image) 這個自動針對 S3 image resize/reduce 的套件，只能說真的挺好用的，幫忙推薦一下：
 
+<!-- more -->
+
 **AWS Lambda Image** : [https://github.com/ysugimoto/aws-lambda-image](https://github.com/ysugimoto/aws-lambda-image)
 如果對於上傳到 S3 的圖片想另外做縮圖、壓縮，或是不同尺寸的圖片輸出時，我想這套件應該非常實用。
 
 ## Makefile
 如果電腦有安裝 [aws-cli](https://aws.amazon.com/tw/cli/) 的話，可以考慮參考 aws-lambda-image 專案裡面的 Makefile 檔案，是個很好的學習範本
-
-<!-- more -->
 
 這裡擷取部分內容，資料來源：[https://github.com/ysugimoto/aws-lambda-image/blob/master/Makefile](https://github.com/ysugimoto/aws-lambda-image/blob/master/Makefile)
 

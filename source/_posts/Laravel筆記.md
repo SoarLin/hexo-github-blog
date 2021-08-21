@@ -39,6 +39,8 @@ categories:
   * make:model 後面接著的 Model/TableName 會在 app 目錄下建立 Model 資料夾，然後再產生 XXXX 的 Model 檔案
   * 最後的 -m 為 Optional，使用的話可以同時產生 migration 檔案來建立表格
 
+<!-- more -->
+
 <a name="建立-migration-建立資料表格"></a>
 ### 建立 Migration (建立資料表格)
 * `php artisan make:migration init_transfer_tool`
@@ -75,7 +77,7 @@ categories:
   * 安裝 laravel-elixir-eslint 與 eslint-plugin-react (因為之前的 eslintrc 內有寫到)
   * `npm install --save-dev laravel-elixir-eslint eslint-plugin-react`
   * 增加 .eslintrc.json 檔案
-<!-- more -->
+
 ````json
 {
     "env": {

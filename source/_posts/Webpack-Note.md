@@ -43,9 +43,11 @@ tags:
 * strip-loader : 可用於 production 情況下，將 console.log 的訊息忽略掉
 * css-loader, style-loader, (sass-loader), less-loader
 
+<!-- more -->
+
 <a name="npm-的-packagesjson"></a>
 ## npm 的 packages.json
-<!-- more -->
+
 * 修改 scripts 內容
   * `"start": "webpack-dev-server"`
   * 接著回到 command line

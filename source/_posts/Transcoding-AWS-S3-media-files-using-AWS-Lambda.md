@@ -29,6 +29,8 @@ categories:
 
 最近因為工作上的需求，需要把影片檔案轉換成串流的格式，還好有想到去年似乎有參加一場 AWS 開發者大會聽到類似這樣的技術，這樣就不用自己很辛苦的架設一台 Streaming Server 了，但是缺點就是當 AWS 的服務用的越爽，就會被 AWS 給綁架，以後沒 AWS 可以用怎麼辦！！！
 
+<!-- more -->
+
 <a name="需要工具"></a>
 ## 需要工具
 
@@ -43,7 +45,7 @@ categories:
 如果 Elastic Transcoder 都已經了解怎麼操作，就算是已經理解這像轉檔服務的使用方式，接著就是透過 Lambda 的方式將這些工作自動化，所以接下來的重頭戲就是如何撰寫 Lambda 的 function 了，沒記錯的話，目前提供三種語法來撰寫，有 Python、Node.js、Java 三種，就請大家找個自己最熟悉或擅長的程式語言吧！
 
 底下我會以 Node.js 的語法來當範例，因為 Python 跟 Java 都很不熟，node.js 至少算是 javascript 的好親戚，平時多少有再寫。
-<!-- more -->
+
 <a name="參考文獻"></a>
 ## 參考文獻
 

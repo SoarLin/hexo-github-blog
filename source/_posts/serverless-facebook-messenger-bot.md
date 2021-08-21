@@ -45,6 +45,8 @@ categories:
 * Facebook Page
 * Facebook Developer
 
+<!-- more -->
+
 <a name="安裝-serverless-framework"></a>
 ### 安裝 Serverless Framework
 serverless 目前(2016/10/06)的版本是 v1.0 rc1，過去在網路上找到的教學文都是 v.0.5.許多，從 JSON 格式轉換成 YAML 格式，這部份搞了我很久，加上一些變數設定等，花了一兩天在摸索。
@@ -63,7 +65,6 @@ npm install -g serverless
 - API Gateway : 用來管理後台 Server or Lambda 等的 API 接口服務，這裡是用來觸發 Lambda function 執行運算
 - CloudWatch : 可以檢視 Lambda 上 Function 執行時所留下的 log，協助開發中 Debug 使用
 
-<!-- more -->
 <a name="aws-前置作業---iam"></a>
 ### AWS 前置作業 - IAM
 如果已經有安裝 AWS 提供的 command line tool ([aws-cli](https://aws.amazon.com/tw/cli/))，可能會方便一點？沒有也沒關係，因為我也是到 aws console 介面上慢慢做的

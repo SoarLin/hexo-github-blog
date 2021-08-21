@@ -18,9 +18,9 @@ categories:
 ## axios
 
 存取 API 的部分，基本上就是用 axios 來做 ajax，不過這次參考了某篇文章的做法，把 API 在傳送前跟接收後都做了一層共同的處理，因為在處理 CROS 的時候，每次 API 的 header 都有些相同的資訊要傳送，所以就另外抽出來實作，而接收端的話，就一起針對錯誤情況做些簡單的處理。
-
-所以另外寫了一個 interceptor.js 來處理，另外在發起 POST 的 request 時，如果 Content-Type 不是 `application/x-www-form-urlencoded`、`multipart/form-data`或`text/plain`，會變成 `Preflighted` 請求，變成在 POST 前會先有個 OPTION 的請求，後端在寫 Allow Methods 裡面，記得把 OPTIONS 加進去
 <!-- more -->
+所以另外寫了一個 interceptor.js 來處理，另外在發起 POST 的 request 時，如果 Content-Type 不是 `application/x-www-form-urlencoded`、`multipart/form-data`或`text/plain`，會變成 `Preflighted` 請求，變成在 POST 前會先有個 OPTION 的請求，後端在寫 Allow Methods 裡面，記得把 OPTIONS 加進去
+
 ````
 import i18n from '@/i18n'
 import axios from 'axios'

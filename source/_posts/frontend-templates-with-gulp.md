@@ -37,6 +37,8 @@ categories:
 
 使用的技術也都不是很新，不過只要可以讓自己在前端切版這個案子方便好用，就會想辦法拿來使用。
 
+<!-- more -->
+
 <a name="專案位置"></a>
 ## 專案位置
 [https://github.com/SoarLin/f2e-template](https://github.com/SoarLin/f2e-template)
@@ -57,7 +59,7 @@ categories:
 * node v4.2.2
 * npm 3.9.2
 * bower 1.8.0
-<!-- more -->
+
 <a name="工具安裝"></a>
 ## 工具安裝
 

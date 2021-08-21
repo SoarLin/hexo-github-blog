@@ -36,6 +36,8 @@ categories:
 
 [![Tuesday](https://img.youtube.com/vi/n4XBfr7PUnk/0.jpg)](https://www.youtube.com/watch?v=n4XBfr7PUnk)
 
+<!-- more -->
+
 <a name="重新組合，加以改良"></a>
 ### 重新組合，加以改良
 
@@ -47,7 +49,6 @@ categories:
 因此藍瓶團隊藉由這個概念，創造一組用來描述藍瓶咖啡豆的簡單風味詞彙：
 Rich, Chocolatey, comforting....
 ````
-<!-- more -->
 #### 閃電型示範
 
 ![閃電示範](/images/SPRINT/lightning.jpg)

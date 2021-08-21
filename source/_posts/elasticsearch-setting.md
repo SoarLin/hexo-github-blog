@@ -39,6 +39,8 @@ categories:
 
 不過這套搜尋引擎工具，實在是博大精深，我到現在大概只摸到一點點邊邊角角吧！趕快趁熱來把一些資訊整理記錄下來。造福日後的自己。另外，一點小小哀怨的是，我才研究兩週左右，趕巧遇上版本從 2.4.1 瞬間變成 5.0 ... 我還是先乖乖把 2.4.1 的使用弄熟好了。
 
+<!-- more -->
+
 <a name="installation-安裝"></a>
 ## Installation 安裝
 
@@ -48,7 +50,7 @@ Elasticsearch 仍是需要 Java 環境來運行，而 Java 版本至少需要 1.
 
 <a name="檢查-java-版本"></a>
 ### 檢查 Java 版本
-<!-- more -->
+
 ````
 java -version
 echo $JAVA_HOME

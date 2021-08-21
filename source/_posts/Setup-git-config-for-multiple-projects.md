@@ -30,6 +30,8 @@ gitconfig 內容
 	ui = true
 ```
 
+<!-- more -->
+
 2. 專案二使用的 Git 設定除了上述的 `user.name` 和 `user.email` 外還有額外的設定，例如： `init.templatedir`與 `commit.template`。
 專案路徑：`/path/to/project2`
 gitconfig 路徑: `/Users/soar/.gitconfig-project2`
@@ -47,8 +49,6 @@ gitconfig 內容
 [commit]
     template = /Users/soar/.gitmessage.txt
 ```
-
-<!-- more -->
 
 # Method 1: 使用 Git 的 includeIf 設定
 

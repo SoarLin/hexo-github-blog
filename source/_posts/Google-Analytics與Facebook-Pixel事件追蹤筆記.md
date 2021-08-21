@@ -37,8 +37,10 @@ categories:
 | Email註冊    | Register|  Click  | Email_Register |
 | Facebook註冊 | Register|  Click  | Facebook_Register |
 
-JavaScript 程式碼說明，也可以看 [Google Analytics的教學文件](https://developers.google.com/analytics/devguides/collection/analyticsjs/events)
 <!-- more -->
+
+JavaScript 程式碼說明，也可以看 [Google Analytics的教學文件](https://developers.google.com/analytics/devguides/collection/analyticsjs/events)
+
 ````
 ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);
 ````

@@ -15,12 +15,13 @@ categories:
 ---
 
 頭一次用 Vue.js 來開發整個網站的專案，雖然還沒全部做完，還是先來做一下至目前為止的一些記錄，提供日後有需要的時候可以參考。專案是使用 vue-cli 3.0 版本產生的，環境所需 `Node >=8.`，目前本機環境 node.js v6.9.5，因為有舊專案的需求，所以不敢直接更新上去，所以使用 nvm 來安裝不同版本的 node.js
+<!-- more -->
 
 初始化專案指令
 ````
 vue init webpack <project-name>
 ````
-<!-- more -->
+
 ````
 // 這裏 project-name 以 vue-hello 為例
 

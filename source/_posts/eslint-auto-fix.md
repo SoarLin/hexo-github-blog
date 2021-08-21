@@ -15,11 +15,11 @@ categories:
 
 後來想到之前在開發 Nuxt.js 專案時，似乎會自動產生 eslint 修正的語法在 package.json 裡面，所以可以透過 npm 執行某個包含 eslint 自動修正的 script 來將一些語法檢查的錯誤做修正，不過我猜應該能修正的部分會有限制，有些可能還是需要人工介入判斷吧！但是至少可以先一些基本的語法修正。
 
+<!-- more -->
+
 後來研究了一下 eslint 本身有提供 `--fix` 的參數可使用，不過不過這似乎主要針對 .js 檔的修正，如果是在開發 vue 專案時的 .vue 專案，就需要額外安裝套件了，基本可額外安裝 `eslint-plugin-vuefix` 這個套件，並且在 .eslintrc.js 檔裡面的 plugins 加上 `vuefix`
 
 操作步驟 :
-
-<!-- more -->
 
 - 原本的 package.json 內，新增一個有自動修正的 script `lint-fix`
 

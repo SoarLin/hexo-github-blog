@@ -36,6 +36,8 @@ categories:
   * `postcss-nextcss`
   * <del>`autoprefixer`</del>, 由於 `postcss-next` 已經自動加入這項功能，因此需要移除 <del>`autoprefixer`</del>
 
+<!-- more -->
+
 <a name="變數"></a>
 ## 變數
 * 定義在 `:root { }` 裡面
@@ -52,7 +54,7 @@ body {
     color: var(--fontColor);
 }
 ````
-<!-- more -->
+
 <a name="計算"></a>
 ## 計算
 * 使用function `calc`

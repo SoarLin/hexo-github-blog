@@ -35,7 +35,7 @@ categories:
 這幾個月來一直懶得更新文章，其實一直想找時間把最近工作的一些事項做些紀錄，結果都一直在看新入坑女團(GFriend)的影片，由於昨天一整天一直在鬼打牆，早上打破一片牆，下午又再遇到一片牆，好在下班前有所突破，趁著記憶猶新的時候，趕緊紀錄一下。
 
 其實到目前為止，本身對於 PWA (Progressive Web Apps) 沒啥研究，所以對 Service Worker 也不太了解，在這種情況下就去串接 Firebase Cloud Messaging，真的有點越級挑戰了，所以一直碰到問題也很正常，甚至一度不曉得該先解決什麼問題，雖然下班前有完成一個簡單的 Web Push Notification，但還是覺得有些運氣成份在。
-
+<!-- more -->
 前情提要一下，目前的前端專案是使用 `vue-cli 3.0` 版搭配 webpack 樣板建置的，其實對於 webpack 的一堆設定也都還沒完全了解，所以三不五時會遇到一些問題，加上 vue-cli 版本比較新，有時上網找答案常常會找到 2.x 版的一些例子，只能先了解後會意，然後再 try & error 的解決。
 
 有個自己每次重開機就會遇到的問題：
@@ -52,7 +52,7 @@ categories:
 2. 修改 `/build/utils.js` 檔案內的 `exports.cssLoaders` function
 
 大致修改如下：把原本 sass loader 的 function 替換成新加入的 function
-<!-- more -->
+
 ```
 exports.cssLoaders = function (options) {
   options = options || {}

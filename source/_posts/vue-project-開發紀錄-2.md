@@ -16,13 +16,13 @@ categories:
 
 ## mixin 內容
 這裡是以前的習慣養成的，其實不一定是個好作法，我會將某些 .vue 裡面，可以共用的 method 或是某些比較獨立的 method 抽出來另外做成 mixin 然後在 import 來用，雖然立意良好，但實際執行上，有時會變成把一個很大的 .vue 檔抽出部分 method 放去 mixin 來使用。
-
+<!-- more -->
 ## pages 內容
 這裡才是放我主要網站頁面架構的 vue 元件，目前分成四個目錄以及一個 Home.vue 與 App.vue 檔
 
 ### App.vue
 這是原本專案建立時產生的 vue 檔，基本上所有內容都在從這裡面產生，底下的範例雖然會透過判斷 `getLoading` 來切換 loading 與顯示畫面，不過我後來實際開發時，把每個頁面或是每個區塊 loading 又另外做處理，所以最外層這個 loading 就沒再用了
-<!-- more -->
+
 ````
 <template>
   <div v-if="getLoading" class="ui active inverted dimmer">

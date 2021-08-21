@@ -66,9 +66,11 @@ curl localhost:9200
 }
 ````
 
+<!-- more -->
+
 <a name="列出所有-index"></a>
 ### 列出所有 index
-<!-- more -->
+
 ````
 curl localhost:9200/_cat/indices?v
 類似出現下面的畫面，顯示每個index的狀態跟資料筆數等資訊

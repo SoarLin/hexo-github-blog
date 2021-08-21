@@ -50,6 +50,8 @@ categories:
 隨著將到來的 2018 年，一般技術人員（尤其是網路開發者）必須拋棄原有開發安全 PHP 應用軟體的舊習與信念。尤其是對於許多不相信這樣壯舉的人來說。
 本指南作為「[PHP: The Right Way](http://www.phptherightway.com/)」電子書（[繁中版](http://laravel-taiwan.github.io/php-the-right-way/)）的補充，強調的是安全性，而不是一般PHP程式開發者主題（如：代碼風格）
 
+<!-- more -->
+
 <a name="php-versions"></a>
 # PHP Versions
 
@@ -62,7 +64,7 @@ PHP 7.2 已經在 2017-11-30 釋出。
 一些提供舊版本PHP的長期支援(LTS)作業系統，這樣的做法通常被認為是有害的。尤其是，在它們增加安全補丁時，不一併增加PHP版號的壞習慣，使得很難推論這些PHP版本的安全性。
 
 因此，無論供應商做出了什麼承諾，只要你能夠幫忙，就應該努力在任何時候運行被主動支持的PHP版本。這樣的話，即使最終只購買一個安全版本，持續升級的工作也會讓你的生活免受不愉快的驚喜。
-<!-- more -->
+
 <a name="dependency-management"></a>
 # Dependency Management
 

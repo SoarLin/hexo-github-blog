@@ -41,6 +41,8 @@ a,
     color: @link-color;
 }
 ````
+
+<!-- more -->
 #### Selectors
 
 ````css
@@ -55,7 +57,7 @@ a,
 }
 ````
 #### URLs
-<!-- more -->
+
 ````css
 // Variables
 @images: "../img";
