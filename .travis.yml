@@ -15,45 +15,29 @@ branches:
   - master
 
 before_install:
-  # - export TZ=Asia/Taipei
-  # - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in .travis/id_rsa_github.enc -out ~/.ssh/id_rsa -d
-
-  # - chmod 600 ~/.ssh/id_rsa
-
-  # - eval $(ssh-agent)
-  # - ssh-add ~/.ssh/id_rsa
-
-  # - cp .travis/ssh_config ~/.ssh/config
-
-  # - git config --global user.name "Soar Lin"
-  # - git config --global user.email soar.lin@gmail.com
-
   - npm install -g hexo-cli
+  - git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 install:
   - npm install
-  - git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 before_script:
-  # - export TZ=Asia/Taipei
 
 script:
   - hexo clean
-  # - hexo generate
-  # - curl -i -X POST "https://soar.stco.tw/update" -F 'file=@db.json' -F 'index=blog' -F 'type=articles'
-  # - gulp
-  - hexo g -d  # use local 'npm run deploy' to deploy blog content
+  - hexo generate
+  # - hexo g -d  # use local 'npm run deploy' to deploy blog content
 
 after_success:
   # - sed -i'' "/^ *repo/s~github\.com~${GITHUBHEXO_TOKEN}@github.com~" _config.yml
   # - hexo deploy
-  # - cd ./public
-  # - git init
-  # - git config user.name "Soar Lin"
-  # - git config user.email "soar.lin@gmail.com"
-  # - git add .
-  # - git commit -m "Deploy to Github Pages from hexo-github-blog"
-  # - git push --force --quiet "https://${GITHUBHEXO_TOKEN}@${GH_REF}" master:master
+  - cd ./public
+  - git init
+  - git config user.name "Soar Lin"
+  - git config user.email "soar.lin@gmail.com"
+  - git add .
+  - git commit -m "Deploy to Github Pages from hexo-github-blog"
+  - git push --force --quiet "https://${GITHUBHEXO_TOKEN}@${GH_REF}" master:master
 
 env:
  global:
