@@ -4,7 +4,6 @@ node_js:
   - 12
 
 cache:
-  apt: true
   directories:
       - node_modules # 不經常變動的資料夾
 
@@ -16,18 +15,18 @@ branches:
   - master
 
 before_install:
-  - export TZ=Asia/Taipei
-  - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in .travis/id_rsa_github.enc -out ~/.ssh/id_rsa -d
+  # - export TZ=Asia/Taipei
+  # - openssl aes-256-cbc -K $encrypted_43f1702cd897_key -iv $encrypted_43f1702cd897_iv -in .travis/id_rsa_github.enc -out ~/.ssh/id_rsa -d
 
-  - chmod 600 ~/.ssh/id_rsa
+  # - chmod 600 ~/.ssh/id_rsa
 
-  - eval $(ssh-agent)
-  - ssh-add ~/.ssh/id_rsa
+  # - eval $(ssh-agent)
+  # - ssh-add ~/.ssh/id_rsa
 
-  - cp .travis/ssh_config ~/.ssh/config
+  # - cp .travis/ssh_config ~/.ssh/config
 
-  - git config --global user.name "Soar Lin"
-  - git config --global user.email soar.lin@gmail.com
+  # - git config --global user.name "Soar Lin"
+  # - git config --global user.email soar.lin@gmail.com
 
   - npm install -g hexo-cli
 
@@ -35,7 +34,7 @@ install:
   - npm install
 
 before_script:
-  - export TZ=Asia/Taipei
+  # - export TZ=Asia/Taipei
 
 script:
   - hexo clean
@@ -45,5 +44,16 @@ script:
   # - hexo g -d  # use local 'npm run deploy' to deploy blog content
 
 after_success:
-  - sed -i'' "/^ *repo/s~github\.com~${GITHUBHEXO_TOKEN}@github.com~" _config.yml
-  - hexo deploy
+  # - sed -i'' "/^ *repo/s~github\.com~${GITHUBHEXO_TOKEN}@github.com~" _config.yml
+  # - hexo deploy
+  - cd ./public
+  - git init
+  - git config user.name "Soar Lin"
+  - git config user.email "soar.lin@gmail.com"
+  - git add .
+  - git commit -m "Deploy to Github Pages from hexo-github-blog"
+  - git push --force --quiet "https://${GITHUBHEXO_TOKEN}@${GH_REF}" master:master
+
+env:
+ global:
+   - GH_REF: github.com/soarlin/soarlin.github.io
