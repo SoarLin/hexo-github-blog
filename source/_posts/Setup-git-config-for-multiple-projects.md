@@ -89,7 +89,7 @@ cp -p ~/.gitconfig-project2 ~/.gitconfig
 }
 ```
 ## 注意事項
-這裡要**注意**的是，在 function 裏面的 `alias` 與 `cp` 前面{% label danger@不要有任何空白 %} ，不然執行指令時會出現 `command not found` 的錯誤。
+這裡要**注意**的是，在 function 裏面的 `alias` 與 `cp` 前面不要有任何空白，不然執行指令時會出現 `command not found` 的錯誤。
 
 然後套用更新後的 `.zshrc`
 ```
