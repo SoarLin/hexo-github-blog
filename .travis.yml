@@ -29,10 +29,10 @@ before_install:
   # - git config --global user.email soar.lin@gmail.com
 
   - npm install -g hexo-cli
-  - npm install hexo-theme-next
 
 install:
   - npm install
+  - git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 before_script:
   # - export TZ=Asia/Taipei
