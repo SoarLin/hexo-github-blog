@@ -356,11 +356,15 @@ codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: default
-    dark: tomorrow-night
+    light: tomorrow-night-eighties
+    dark: tomorrow-night-eighties
   prism:
     light: prism
     dark: prism-dark
+  highlight:
+    enable: true
+  prismjs:
+    enable: false
   # Add copy button on codeblock
   copy_button:
     enable: true
@@ -396,7 +400,7 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
+  enable: true
   permalink: https://github.com/SoarLin
   title: Follow me on GitHub
 
@@ -823,7 +827,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # All available transition variants: https://theme-next.js.org/animate/

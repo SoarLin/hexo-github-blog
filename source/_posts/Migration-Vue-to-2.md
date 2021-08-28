@@ -10,7 +10,7 @@ tags:
   - laravel
   - elixir
   - vuex
-  - vue.js
+  - vuejs
 categories:
  - Frontend
 ---

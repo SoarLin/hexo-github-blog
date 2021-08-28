@@ -37,8 +37,8 @@ after_success:
   - git config user.email "soar.lin@gmail.com"
   - git add .
   - git commit -m "Deploy to Github Pages from hexo-github-blog"
-  - git push --force --quiet "https://${GITHUBHEXO_TOKEN}@${GH_REF}" master:master
+  - git push --force --quiet "https://${GITHUBHEXO_TOKEN}@${GH_PAGE_REPO}" master:master
 
 env:
  global:
-   - GH_REF: github.com/soarlin/soarlin.github.io
+   - GH_PAGE_REPO: github.com/soarlin/soarlin.github.io

@@ -23,7 +23,7 @@ categories:
 
 - 原本的 package.json 內，新增一個有自動修正的 script `lint-fix`
 
-```
+```json
 {
   "scripts": {
     // ....
@@ -42,7 +42,7 @@ npm install --save eslint-plugin-vuefix
 
 - 在 .eslintrc.js 檔內新增使用插件名稱，如果 vue 專案本身有安裝 `eslint-plugin-html` 並且載入 .eslintrc.js，這會影響自動修正的插件執行，所以可以將該插件註解或是試著放到 `vuefix` 插件後面看看
 
-```
+```javascript
 module.exports = {
   // ...
   plugins: [

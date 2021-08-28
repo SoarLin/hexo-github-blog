@@ -24,7 +24,7 @@ tags:
 上面網址提供的範例在傳入參數時，一個與多個在接收時，其實有所不同，這邊也是踩了雷才注意到
 **Webpack 版本 : 4.43.0**
 
-```
+```js
 // 傳入兩組 env 時
 npx webpack --env NODE_ENV=local --env production --progress
 
@@ -44,7 +44,7 @@ module.exports = (env) => {
 ```
 傳入兩組 env 值的時候，所收到的 env 其實是一組陣列，各別是 `--env XXXXX` 裡面的 `XXXXX`，但是當傳入的只有一組 env 時，例如：`--env production`這時候 env 就是 `production` 這個值，就**不再是陣列了**
 
-```
+```js
 // 傳入一組 env 時
 npx webpack --env production --progress
 
@@ -64,7 +64,7 @@ module.exports = (env) => {
 雖然目前 webpack 參考的頁面是 v5.31.0 版，可是沒特別寫出這個差異，讓我一直踩雷踩到懷疑人生了...
 
 另外，可以也使用 mode 來傳入環境變數
-```
+```js
 npx webpack --mode production --progress
 
 module.exports = (env, options) => {
@@ -85,7 +85,7 @@ module.exports = (env, options) => {
 
 根據這個套件的說明，可以簡單地透過在 `options` 裡面加入 `data` 來將要傳入 pug 的變數傳進去即可。而 data 的格式，寫成 JSON 即可。結合一下上面的步驟一，就可以來調整圖片的前綴網址。
 
-```
+```js
 // package.json 內的 scripts
 webpack --env production --mode production --config webpack.config.js
 
@@ -133,7 +133,7 @@ module.exports = (env, options) => {
 };
 ```
 而到時候 pug 檔內，就可以讀到傳入的變數了
-```
+```pug
 // 接收變數
 - var imgPrefixUrl = IMG_PREFIX_URL
 
@@ -147,7 +147,7 @@ img.rounded-circle(src=imgPrefixUrl+'images/soarlin-avatar.jpg', alt="avatar")
 雖然在 [stack overflow](https://stackoverflow.com/questions/60058352/pass-webpack-environment-variable-to-scss-file) 上也有找到解答，可是上面的解答實際使用時有問題，後來是在 sass-loader npm 的頁面上找到正確的參數，可能是版本的關係產生的不同吧！
 
 在 sass-loader 的 `options` 加入 `additionalData` 來傳入參數到 Sass/SCSS 檔內。而 additionalData 可使用字串或是函示，使用的方式在上述參考網址也有了，所以我就以我自己的範例來寫就好
-```
+```js
 // package.json 內的 scripts
 webpack --env production --mode production --config webpack.config.js
 
@@ -193,7 +193,7 @@ module.exports = (env, options) => {
 ```
 
 這樣似乎會將 additionalData 放在所有 Sass/SCSS 的最前方，讓它以變數的方式直接帶入 Sass/SCSS 內，所以就可以直接使用變數
-```
+```scss
 // 傳入 $imgPrefix: _VARIABLES.IMG_PREFIX_URL
 .item-bg {
   background-image: url($imgPrefix+'images/background-0.jpg');

@@ -81,7 +81,7 @@ cp id_rsa_github.enc .travis/
 * `-in xxxxx.enc` 整個 repo 被 Travis CI 抓取後 private key 的相對路徑，剛剛搬到 .travis 目錄下，所以是 `.travis/id_rsa_github.enc`
 * `-out ooooooo` 解密後 private key 路徑，後續會再用到，這裡我定義成 `~/.ssh/id_rsa`
 
-````
+````yml
 language: node_js
 node_js:
 	- '4'
