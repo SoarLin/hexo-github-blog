@@ -145,3 +145,9 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 其實上方參考的 .travis.yml 已經加在 `before_install` 裏面了。
 
 等我都改好這些後，總算能夠順利的將我的 blog 文章發布出去了，真是令人內牛滿面啊～
+
+# 參考文章
+
+* [测试travis 自动部署](https://www.dazhuanlan.com/lk0078/topics/1436211)
+* [手把手教你使用Travis CI自动部署你的Hexo博客到Github上](https://blog.csdn.net/woblog/article/details/51319364)
+* [hexo本地测试运行重启后页面空白,提示 : WARN No layout: index.html?](https://www.zhihu.com/question/38781463)

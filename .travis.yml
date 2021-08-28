@@ -7,9 +7,6 @@ cache:
   directories:
       - node_modules # 不經常變動的資料夾
 
-addons:
-  ssh_known_hosts: github.com
-
 branches:
  only:
   - master
