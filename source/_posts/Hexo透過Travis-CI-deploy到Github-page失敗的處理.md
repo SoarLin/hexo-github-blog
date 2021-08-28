@@ -25,7 +25,11 @@ categories:
 
 目前發布 blog 文章時，我用了兩個 github repo，一個單純用來寫文章的`hexo-github-blog`，在寫完文章後，透過 Travis CI 來重新產生靜態頁面、然後將產生好的 blog 資料夾 `.deploy_git`整包推到另一個 repo `soarlin.github.io` 上，這樣就可以讓我的 blog 在 github page 上面順利顯示了。
 
-大致流程：{% label primary@hexo-github-blog %} >>> {% label info@Travis CI %} >>> {% label success@soarlin.github.io %}
+<div class="note default">
+  <p>
+    大致流程：{% label primary@hexo-github-blog %} >>> {% label info@Travis CI %} >>> {% label success@soarlin.github.io %}
+  </p>
+</div>
 
 # 錯誤 1. Permission denied
 
