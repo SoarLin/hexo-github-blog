@@ -10,7 +10,7 @@ tags:
   - zsh
   - bash
 categories:
-  - Workflow
+  - Server
 ---
 
 今天看到公司同仁分享針對不同專案設定 git config，覺得非常的受用，所以記錄一下。
