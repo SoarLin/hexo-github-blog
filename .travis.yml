@@ -19,6 +19,7 @@ install:
   - npm install
 
 before_script:
+  - export TZ=Asia/Taipei
 
 script:
   - hexo clean
