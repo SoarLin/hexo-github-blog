@@ -150,6 +150,7 @@ social:
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
   #YouTube: https://youtube.com/yourname || fab fa-youtube
   Instagram: https://instagram.com/soarlin/ || fab fa-instagram
+  LinkedIn: https://www.linkedin.com/in/soarlin/ || fab fa-linkedin
   #Skype: skype:yourname?call|chat || fab fa-skype
 
 social_icons:
