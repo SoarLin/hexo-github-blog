@@ -202,6 +202,16 @@ post-default-img-mobile: https://soarlin.github.io/images/background-0.jpg
 # Algolia Search
 # For more information: https://www.algolia.com
 algolia:
-  applicationID: "FJ6AHL5RCN"
-  apiKey: "0ab28386046ab088151b79050ba0ad5f"
-  indexName: "github-blogs"
+  applicationID: "KI4M4QAKIQ"
+  apiKey: "1a165dc800c9a291969bf32ecf642b20"
+  chunkSize: 5000
+  indexName: "blog-index"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
