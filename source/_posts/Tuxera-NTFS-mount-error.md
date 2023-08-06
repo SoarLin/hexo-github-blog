@@ -3,7 +3,7 @@ layout: post
 title: Tuxera NTFS mounting error - kDAReturnExclusiveAccess
 author: Soar Lin
 cdn: header-off
-header-img: 'https://soarlin.github.io/images/Tuxera/tuxera.jpg'
+header-img: 'https://i.imgur.com/0zWnvlQ.jpg'
 date: 2023-07-28 19:37:15
 tags:
   - NTFS
@@ -27,7 +27,7 @@ Error while mounting disk6s1: kDAReturnExclusiveAccess
 ```
 拿著關鍵字去查了 google，也只是知道了這是 Apple Developer 裡面寫道的一個 function
 
-![tuxera-mounting-error](/images/Tuxera/tuxera-mounting-error.png)
+![tuxera-mounting-error](https://i.imgur.com/aK2Bh9S.png)
 
 好在找到一篇一樣使用 Tuxera NTFS 遇到問題的文章，雖然問題不同，不過情況很相似，都是掛載外接硬碟時會報錯。
 
@@ -43,7 +43,7 @@ sudo mkdir /Volumes/MyDisk
 ```
 接著可使用 `diskutil list` 來找出目前掛在硬碟的標示號，我的目前是 **disk6s1**
 
-![diskutil list](/images/Tuxera/list-disk.png)
+![diskutil list](https://i.imgur.com/IWDskfC.png)
 
 最後，透過 Tuxera 的程式手動掛載硬碟到剛剛新增的掛載點 (記得更換掉 **disk6s1** 成自己的硬碟標示號)
 ```bash

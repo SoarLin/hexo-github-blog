@@ -17,3 +17,6 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 * hexo new '文章名稱'
 * hexo generate
 * hexo server
+
+### 圖片使用 imgur 平台，減少消耗 Github 容量
+參考文章：https://ppundsh.github.io/posts/cb53/
